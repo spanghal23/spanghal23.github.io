@@ -29,10 +29,10 @@ author:
       url: "https://www.linkedin.com/in/your-link-here"
 
 # --- Defaults so you don't have to repeat layout everywhere ---
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "single"
-      author_profile: true
+#defaults:
+#  - scope:
+#      path: ""
+#      type: "posts"
+#    values:
+#      layout: "single"
+#      author_profile: true
