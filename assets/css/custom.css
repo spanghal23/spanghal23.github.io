@@ -1,39 +1,6 @@
-/* === Global font override for Minimal Mistakes === */
-/* Change "Inter" to whatever font you prefer */
-
-html,
-body,
-.page,
-.page__content,
-.page__title,
-.archive,
-.archive__item-title,
-.archive__item-excerpt {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
-}
-
-/* Header / navigation / site title */
-.masthead,
-.masthead__inner-wrap,
-.site-title,
-.site-title a,
-.greedy-nav,
-.greedy-nav a,
-.masthead__menu-item,
-.masthead__menu-item a {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
-}
-
-/* Sidebar + meta text */
-.sidebar,
-.sidebar a,
-.page__meta,
-.page__meta a,
-.author__name,
-.author__bio,
-.author__urls-wrapper {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+/* DEBUG: make it obvious if this file is loading */
+body {
+  background: #222 !important;
+  color: #0f0 !important;
+  font-size: 20px !important;
 }
