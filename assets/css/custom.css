@@ -1,0 +1,15 @@
+/* Global font override */
+
+html,
+body,
+.page,
+.page__content,
+.page__title,
+.masthead,
+.site-title,
+.site-title a,
+.greedy-nav,
+.greedy-nav a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
