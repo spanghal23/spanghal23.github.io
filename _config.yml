@@ -1,5 +1,3 @@
-title: "Sameer Panghal"
-name: "Sameer Panghal"
 description: "Mechanical / Robotics Engineer"
 
 url: "https://spanghal23.github.io"
@@ -15,7 +13,6 @@ plugins:
 author:
   name: "Sameer Panghal"
   avatar: "/assets/images/avatar.jpg"   # change or remove if you don't have this image
-  bio: "Mechanical and robotics engineer at Georgia Tech."
   links:
     - label: "GitHub"
       icon: "fab fa-github"
