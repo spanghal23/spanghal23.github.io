@@ -1,12 +1,10 @@
-# --- Basic site settings ---
 title: "Sameer Panghal"
 name: "Sameer Panghal"
 description: "Mechanical / Robotics Engineer"
 
-url: "https://spanghal23.github.io"   # your site URL
-baseurl: ""                           # empty because this is a user site
+url: "https://spanghal23.github.io"
+baseurl: ""   # user site → keep this empty
 
-# --- Minimal Mistakes theme ---
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 minimal_mistakes_skin: "dark"
 
