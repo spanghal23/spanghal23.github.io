@@ -1,11 +1,9 @@
 ---
 layout: single
-title: "Resume"
 permalink: /resume/
 ---
 
 <!-- Replace this with your real resume content or an embedded PDF later -->
-<h1>Resume</h1>
 <p>
   This page will host my resume and a summary of my experience in mechanical design, controls,
   robotics, and embedded systems.
