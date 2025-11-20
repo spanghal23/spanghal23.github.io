@@ -1,0 +1,11 @@
+title: "Sameer Panghal"
+description: "Professional Portfolio"
+
+# For a user site (username.github.io)
+url: "https://spanghal23.github.io"
+baseurl: ""   # keep empty for user site
+
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
+
+plugins:
+  - jekyll-include-cache
