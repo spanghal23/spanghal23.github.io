@@ -13,6 +13,7 @@ plugins:
 author:
   name: "Sameer Panghal"
   avatar: "/assets/images/avatar.jpg"   # change or remove if you don't have this image
+  bio: ""
   links:
     - label: "GitHub"
       icon: "fab fa-github"
