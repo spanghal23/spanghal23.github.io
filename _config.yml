@@ -1,11 +1,38 @@
+# --- Basic site settings ---
 title: "Sameer Panghal"
-description: "Professional Portfolio"
+name: "Sameer Panghal"
+description: "Mechanical / Robotics Engineer"
 
-# For a user site (username.github.io)
-url: "https://spanghal23.github.io"
-baseurl: ""   # keep empty for user site
+url: "https://spanghal23.github.io"   # your site URL
+baseurl: ""                           # empty because this is a user site
 
+# --- Minimal Mistakes theme ---
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 
 plugins:
   - jekyll-include-cache
+
+# Optional: choose a color skin (pick one you like)
+minimal_mistakes_skin: "default"  # or "air", "mint", "dark", "contrast", etc.
+
+# --- Author profile (shows in sidebar if author_profile: true) ---
+author:
+  name: "Sameer Panghal"
+  avatar: "/assets/images/avatar.jpg"   # change or remove if you don't have this image
+  bio: "Mechanical and robotics engineer at Georgia Tech."
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/spanghal23"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/your-link-here"
+
+# --- Defaults so you don't have to repeat layout everywhere ---
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
