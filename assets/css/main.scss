@@ -1,0 +1,25 @@
+---
+---
+
+/* Optional: use a Google Font instead of system fonts
+ * If you don't want this, you can delete the @import url(...) line
+ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Load Minimal Mistakes skin + theme */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* ===== Custom font overrides ===== */
+
+/* Body text */
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+               "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+               "Helvetica Neue", Arial, sans-serif;
+}
