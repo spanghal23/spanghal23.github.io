@@ -7,7 +7,7 @@ url: "https://spanghal23.github.io"   # your site URL
 baseurl: ""                           # empty because this is a user site
 
 # --- Minimal Mistakes theme ---
-remote_theme: "mmistakes/minimal-mistakes@4.27.3"
+remote_theme: "jekyll/minima: skin: dark"
 
 plugins:
   - jekyll-include-cache
