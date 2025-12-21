@@ -17,7 +17,7 @@ permalink: /resume/
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -47.5vw; /* This must be half of the width (95vw / 2) */
+    margin-left: -50vw; /* This must be half of the width (95vw / 2) */
     margin-right: -47.5vw;
     
     /* 4. Height settings */
@@ -37,8 +37,6 @@ object {
     display: block;
 }
 </style>
-
-# Resume
 
 <div class="resume-wrapper">
     <object data="/assets/resumes/sameer_panghal_resume_master.pdf" type="application/pdf">
