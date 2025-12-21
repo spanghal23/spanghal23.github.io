@@ -8,7 +8,7 @@ permalink: /resume/
 /* "Breakout" CSS to escape the narrow theme column */
 .resume-wrapper {
     /* 1. Force the width to be 95% of the user's screen */
-    width: 95vw; 
+    width: 80vw; 
     
     /* 2. Cap the width for huge monitors (optional, remove if you want full stretch) */
     max-width: 1400px; 
@@ -17,7 +17,7 @@ permalink: /resume/
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -50vw; /* This must be half of the width (95vw / 2) */
+    margin-left: -47.5vw; /* This must be half of the width (95vw / 2) */
     margin-right: -47.5vw;
     
     /* 4. Height settings */
