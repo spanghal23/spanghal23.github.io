@@ -3,10 +3,10 @@ layout: single
 permalink: /projects/
 ---
 
-Teleoperated Robot Arm
+# Teleoperated Robot Arm
 
 
-Variable Input Ball Levitation
+# Variable Input Ball Levitation
 
 
-Techman Cobot Custom End-of-Arm-Tool
+# Techman Cobot Custom End-of-Arm-Tool
