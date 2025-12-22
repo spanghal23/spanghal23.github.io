@@ -11,182 +11,66 @@ Built a ball levitation system using transient commands from input hand height
 ## Techman Cobot Custom End-of-Arm-Tool
 Designed, fabricated, and installed custom EOAT for line techman cobots to assist in material handling
 
----
-layout: default
-title: Projects
-permalink: /projects/
----
-
-<style>
-/* --- Projects Page Styling --- */
-
-/* The Grid Container: Holds all project cards */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-scales columns */
-    gap: 40px; /* Space between cards */
-    padding: 20px 0;
-}
-
-/* Individual Project Card */
-.project-card {
-    background: #fff;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Media Area (Video/Image) */
-.project-media {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    background-color: #f6f8fa;
-    border-bottom: 1px solid #e1e4e8;
-    position: relative;
-    overflow: hidden;
-}
-
-.project-media img, 
-.project-media video, 
-.project-media iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fills the box without stretching */
-    border: none;
-}
-
-/* Content Area */
-.project-content {
-    padding: 20px;
-    flex-grow: 1; /* Pushes buttons to the bottom */
-}
-
-.project-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #24292e;
-}
-
-/* Specs / Tags (e.g., Python, CAD) */
-.project-specs {
-    margin-bottom: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.spec-tag {
-    background: #f1f8ff;
-    color: #0366d6;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 12px;
-}
-
-.project-desc {
-    font-size: 0.95rem;
-    color: #586069;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* Links / Buttons */
-.project-links {
-    padding: 20px;
-    background-color: #fcfcfc;
-    border-top: 1px solid #e1e4e8;
-    display: flex;
-    gap: 15px;
-}
-
-.btn-link {
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #0366d6;
-}
-
-.btn-link:hover {
-    text-decoration: underline;
-}
-
-</style>
-
-<h1 style="margin-bottom: 40px; text-align: center;">My Technical Projects</h1>
-
-<div class="projects-grid">
-
-    <article class="project-card">
-        <div class="project-media">
-            <img src="/assets/images/robot-arm.jpg" alt="Robot Arm Project">
+<article class="project-card">
+    <div class="project-media">
+        <img src="/assets/images/robot-arm.jpg" alt="Teleoperated Robot Arm">
+    </div>
+    <div class="project-content">
+        <h2 class="project-title">Teleoperated Robot Arm</h2>
+        <div class="project-specs">
+            <span class="spec-tag">Python & C++</span>
+            <span class="spec-tag">CANBUS</span>
+            <span class="spec-tag">Field-Oriented Control</span>
+            <span class="spec-tag">MATLAB</span>
         </div>
-        <div class="project-content">
-            <h2 class="project-title">Teleoperated Robot Arm</h2>
-            <div class="project-specs">
-                <span class="spec-tag">Python</span>
-                <span class="spec-tag">ROS</span>
-                <span class="spec-tag">SolidWorks</span>
-            </div>
-            <p class="project-desc">
-                Designed and built a 6-DOF robotic arm capable of mimicking human hand gestures in real-time. 
-                Used inverse kinematics for precise control and minimal latency.
-            </p>
-        </div>
-        <div class="project-links">
-            <a href="https://github.com/username/project-repo" class="btn-link">View Code &rarr;</a>
-            <a href="#" class="btn-link">Read Report</a>
-        </div>
-    </article>
+        <p class="project-desc">
+            This project involved the complete design and fabrication of a 4-DOF robotic arm driven by custom actuators with 10:1 planetary gearboxes. The mechanical design was validated through static load calculations in MATLAB, achieving a holding torque of 18.8 N-m with a safety factor of 1.3. On the electrical side, I engineered a 600W power distribution architecture and implemented closed-loop Field-Oriented Control (FOC) using ODrive S1 units and an STM32 microcontroller via CANBUS. [cite_start]The system is controlled through a custom teleoperation pipeline I developed in Python, which maps computer vision outputs directly to actuator setpoints to execute synchronized, high-precision motion[cite: 51, 52, 55, 56, 57].
+        </p>
+    </div>
+    <div class="project-links">
+        <a href="#" class="btn-link">View Code &rarr;</a>
+        <a href="#" class="btn-link">Watch Demo</a>
+    </div>
+</article>
 
-    <article class="project-card">
-        <div class="project-media">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project Video" allowfullscreen></iframe>
-        </div>
-        <div class="project-content">
-            <h2 class="project-title">Autonomous Drone</h2>
-            <div class="project-specs">
-                <span class="spec-tag">C++</span>
-                <span class="spec-tag">Computer Vision</span>
-            </div>
-            <p class="project-desc">
-                Developed an obstacle avoidance algorithm for a quadcopter using Lidar and optical flow sensors.
-                Achieved 95% success rate in dense forest environments.
-            </p>
-        </div>
-        <div class="project-links">
-            <a href="#" class="btn-link">Watch Demo &rarr;</a>
-        </div>
-    </article>
 
-    <article class="project-card">
-        <div class="project-media">
-            <img src="https://via.placeholder.com/400x200" alt="Placeholder">
+<article class="project-card">
+    <div class="project-media">
+        <img src="/assets/images/ball-levitation.jpg" alt="Ball Levitation Project">
+    </div>
+    <div class="project-content">
+        <h2 class="project-title">Variable Input Ball Levitation</h2>
+        <div class="project-specs">
+            <span class="spec-tag">Control Theory (PID)</span>
+            <span class="spec-tag">Signal Processing</span>
+            <span class="spec-tag">Mechatronics</span>
         </div>
-        <div class="project-content">
-            <h2 class="project-title">New Project Title</h2>
-            <div class="project-specs">
-                <span class="spec-tag">Skill 1</span>
-                <span class="spec-tag">Skill 2</span>
-            </div>
-            <p class="project-desc">
-                Write a short description of your project here. What problem did you solve? What tools did you use?
-            </p>
-        </div>
-        <div class="project-links">
-            <a href="#" class="btn-link">Link 1 &rarr;</a>
-            <a href="#" class="btn-link">Link 2</a>
-        </div>
-    </article>
+        <p class="project-desc">
+            To achieve stable levitation of a ball at variable heights, I built a closed-loop mechatronic system grounded in a physics-based plant model derived from first principles. By validating this model against experimental data, I achieved 95% simulation accuracy, which allowed for precise control law design. I implemented a PD-based height controller that outperformed standard PID implementations, maintaining the ball's position within 2mm of the target. [cite_start]The system reliability was further enhanced by applying Kalman filters and moving averages to mitigate sensor noise, alongside a hardware-software co-design that optimized the integration of ultrasonic sensors and brushless DC fan airflow[cite: 65, 68, 69, 70, 72].
+        </p>
+    </div>
+    <div class="project-links">
+        <a href="#" class="btn-link">Read Report &rarr;</a>
+    </div>
+</article>
 
-</div>
+<article class="project-card">
+    <div class="project-media">
+        <img src="/assets/images/eoat.jpg" alt="End of Arm Tooling">
+    </div>
+    <div class="project-content">
+        <h2 class="project-title">Custom Cobot End-of-Arm-Tool</h2>
+        <div class="project-specs">
+            <span class="spec-tag">SolidWorks</span>
+            <span class="spec-tag">FEA Analysis</span>
+            <span class="spec-tag">GD&T</span>
+            <span class="spec-tag">Robotics</span>
+        </div>
+        <p class="project-desc">
+            During my time at the Schaeffler Group, I designed and deployed a custom End-Of-Arm-Tool (EOAT) for Techman and Universal Robots capable of handling 2.5kg loads. I utilized Finite Element Analysis (FEA) to simulate force loading, which drove design changes that reduced cantilever beam deflection by 3 degrees. The final components were professionally machined from MIC6-Aluminum based on extensive GD&T drawings I created to ensure dimensional stability. [cite_start]I also programmed the robot's vision sensing to detect rack vacancies, optimizing the pick-and-place cycle and contributing to an estimated $720,000 in annual savings[cite: 31, 32, 33, 34, 35].
+        </p>
+    </div>
+    <div class="project-links">
+        <a href="#" class="btn-link">View Project &rarr;</a>
+    </div>
+</article>
