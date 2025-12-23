@@ -298,4 +298,11 @@ video {
             modal.style.display = "none";
         }
     }
+
+    <style>
+  .caption, figcaption {
+    font-style: normal !important;
+    text-transform: none !important; /* Optional: Stops it from being uppercase if set */
+  }
+</style>
 </script>
