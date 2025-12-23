@@ -72,7 +72,7 @@ a:hover { text-decoration: underline; }
 .project-title { color: var(--text-white) !important; }
 .project-desc { color: var(--text-grey) !important; }
 
-/* === FOOTER FIX (Zero Height) === */
+/* === FOOTER FIX (Match Header Spacing) === */
 
 /* 1. Main Footer Container */
 .page__footer {
@@ -80,22 +80,23 @@ a:hover { text-decoration: underline; }
   color: var(--text-grey) !important;
   border-top: 1px solid var(--border) !important;
   
-  /* REMOVE ALL SPACING */
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-top: 0 !important; /* This pulls it tight to the content above */
+  /* MATCH HEADER SPACING: Standard header padding is usually around 1em/1rem */
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  
+  margin-top: 0 !important; /* Keep it tight to the content */
 }
 
-/* 2. Inner Wrapper (The custom HTML you added) */
+/* 2. Inner Wrapper */
 .custom-footer-inner {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  gap: 15px !important;
+  gap: 20px !important; /* Slightly wider gap like nav links */
   width: 100% !important;
   
-  /* Height Control */
-  height: 60px !important; /* Fixed height to force it to be small */
+  /* Reset Height & Padding to let the outer container control spacing */
+  height: auto !important;
   padding: 0 !important;
   margin: 0 !important;
   
@@ -103,19 +104,25 @@ a:hover { text-decoration: underline; }
   background: transparent !important;
 }
 
-/* 3. Footer Links */
+/* 3. Footer Links (Match Header Text Size) */
 .custom-footer-inner a {
   margin: 0 !important;
-  color: var(--text-grey) !important;
+  color: var(--text-white) !important; /* Use White to match Header Links */
   font-weight: 600;
   text-decoration: none;
-  line-height: 60px; /* Vertically centers text in the 60px bar */
+  font-size: 1rem !important; /* Ensure text size matches header */
 }
-.custom-footer-inner a:hover { color: var(--accent) !important; }
+
+.custom-footer-inner a:hover {
+  color: var(--accent) !important;
+}
 
 /* 4. Kill internal borders & ghosts */
 .page__footer footer, .page__footer div { border: none !important; box-shadow: none !important; }
 .page__footer::before, .page__footer::after { display: none !important; }
+
+/* Modal Background */
+#imageModal { background-color: rgba(0,0,0,0.95) !important; }
 
 /* Modal Background */
 #imageModal { background-color: rgba(0,0,0,0.95) !important; }
