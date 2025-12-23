@@ -9,10 +9,6 @@ minimal_mistakes_skin: "default"
 plugins:
   - jekyll-include-cache
 
-sass:
-  sass_dir: _sass
-  style: compressed
-
 # --- Author profile (shows in sidebar if author_profile: true) ---
 author:
   name: "Sameer Panghal"
@@ -34,3 +30,7 @@ author:
 #    values:
 #      layout: "single"
 #      author_profile: true
+
+sass:
+  sass_dir: _sass
+  style: compressed
