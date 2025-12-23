@@ -1,5 +1,8 @@
 ---
+# Only the main Sass file needs front matter (the dashes are important)
 ---
+
+@charset "utf-8";
 
 /* 1. LOAD THEME DEFAULTS */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
@@ -8,54 +11,69 @@
 /* 2. IMPORT INTER FONT */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* 3. PITCH BLACK VARIABLES */
+/* 3. FORCE PITCH BLACK VARIABLES */
 :root {
-  --pitch-black: #000000;    /* Pure Black */
-  --off-black: #111111;      /* Very Dark Grey (for subtle contrast) */
-  --card-bg: #1a1a1a;        /* Dark Grey Cards */
-  --text-white: #ffffff;     /* Pure White Text */
-  --text-grey: #a0a0a0;      /* Grey Text */
-  --accent: #3b82f6;         /* Bright Blue */
-  --border: #333333;         /* Dark Borders */
+  --pitch-black: #000000;
+  --dark-grey: #121212;
+  --text-white: #ffffff;
+  --text-grey: #a0a0a0;
+  --accent: #3b82f6;
+  --border: #333333;
 }
 
-/* 4. NUCLEAR OVERRIDES (Force Everything to Black) */
+/* 4. OVERRIDES */
 
-/* Main Page Background */
-html, body, .page, .page__content, .initial-content, .archive {
+/* Body & Main Background */
+body, html, .page, .page__content, .archive {
   background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
   font-family: 'Inter', sans-serif !important;
 }
 
-/* Header / Navigation Bar */
+/* HEADER FIX (This targets the white bar) */
 .masthead {
   background-color: var(--pitch-black) !important;
   border-bottom: 1px solid var(--border) !important;
 }
+
+.masthead__inner-wrap {
+  background-color: var(--pitch-black) !important;
+}
+
+/* Navigation Links */
 .greedy-nav {
   background-color: var(--pitch-black) !important;
 }
+
+.greedy-nav a {
+  color: var(--text-white) !important;
+}
+
 .site-title, .masthead__menu-item a {
   color: var(--text-white) !important;
   font-weight: 600 !important;
+}
+
+/* Project Cards */
+.project-card {
+  background-color: var(--dark-grey) !important;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.project-title {
+  color: var(--text-white) !important;
+}
+
+.project-desc {
+  color: var(--text-grey) !important;
 }
 
 /* Footer */
 .page__footer {
   background-color: var(--pitch-black) !important;
   color: var(--text-grey) !important;
-  border-top: 1px solid var(--border) !important;
-}
-.page__footer-follow .social-icons .svg-inline--fa {
-  color: var(--text-grey) !important;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6, .page__title {
-  color: var(--text-white) !important;
-  font-family: 'Inter', sans-serif !important;
-  letter-spacing: -0.02em;
+  border-top: 1px solid var(--border);
 }
 
 /* Links */
@@ -65,150 +83,9 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  color: #60a5fa !important;
 }
 
-/* === PROJECT CARDS (Minimalist Dark) === */
-.projects-container {
-  width: 90%;
-  max-width: 1400px;
-  margin: 60px auto;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 80px;
-}
-
-.project-card {
-  background-color: var(--card-bg) !important; /* Dark Grey Card */
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8); /* Deep Shadow */
-  display: flex;
-  flex-direction: column;
-}
-
-.project-main-image {
-  background-color: #000;
-  border-bottom: 1px solid var(--border);
-  width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-.project-content {
-  padding: 40px;
-}
-
-.project-title {
-  color: var(--text-white) !important;
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.project-desc {
-  color: var(--text-grey) !important;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  font-weight: 300;
-  margin-bottom: 40px;
-}
-
-/* Gallery & Video */
-.secondary-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-bottom: 40px;
-}
-
-.gallery-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  background-color: #222;
-  opacity: 0.8;
-  transition: all 0.2s;
-  cursor: zoom-in;
-}
-
-.gallery-img:hover {
-  opacity: 1;
-  border-color: var(--accent);
-}
-
-.video-container {
-  width: 100%;
-  background: #000;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-video { width: 100%; display: block; }
-
-/* Repo Link */
-.repo-link-container {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid var(--border);
-}
-.repo-link {
-  color: var(--accent) !important;
-  border: 1px solid var(--accent);
-  padding: 10px 24px;
-  border-radius: 6px;
-  transition: all 0.2s;
-}
-.repo-link:hover {
-  background-color: var(--accent);
-  color: #fff !important;
-  text-decoration: none;
-}
-
-/* Modal */
+/* Modal Background */
 #imageModal {
   background-color: rgba(0,0,0,0.95) !important;
-  backdrop-filter: blur(5px);
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 50px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 95%;
-  max-height: 90vh;
-  border-radius: 4px;
-}
-#modalCaption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 20px 0;
-}
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: #fff;
-  font-size: 40px;
-  cursor: pointer;
 }
