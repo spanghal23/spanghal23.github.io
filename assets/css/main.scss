@@ -28,6 +28,11 @@ html, body {
   font-family: 'Inter', sans-serif !important;
 }
 
+/* GLOBAL IMAGE FIX */
+img {
+  background-color: transparent !important;
+}
+
 /* === HEADER FIX === */
 .masthead {
   background-color: var(--pitch-black) !important;
@@ -44,97 +49,81 @@ html, body {
   border: 1px solid var(--border);
 }
 
-/* === CONTENT FIXES (GAP REMOVAL) === */
+/* === CONTENT FIXES === */
 #main, .page__content, .archive, .sidebar, .sidebar__right {
   background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
 }
-
-/* THIS REMOVES THE GAP ABOVE THE FOOTER */
-.page__content {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.archive {
-  margin-bottom: 0 !important; 
-}
+.page__content { margin-bottom: 0 !important; padding-bottom: 0 !important; }
 
 a { color: var(--accent) !important; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* === PROJECT CARDS === */
+/* === PROJECT CARDS (Background Fix) === */
 .project-card {
-  background-color: var(--dark-gray) !important;
+  background-color: var(--dark-grey) !important;
   border: 1px solid var(--border);
   box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+/* Ensure any link wrapping the image is also transparent */
+.project-card a {
+  background-color: transparent !important;
+  display: block;
 }
 
 .project-main-image {
-  /* CHANGED: Set to transparent so it matches the card automatically */
-  background-color: transparent !important; 
+  /* THE FIX: Match the card color exactly (#121212) */
+  background-color: var(--dark-grey) !important; 
+  
   border-bottom: 1px solid var(--border);
   width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: contain;
+  
+  /* Reset size to default (since you didn't want it resized) */
+  height: auto !important;
+  max-height: 600px; /* Optional cap just in case */
+  
+  object-fit: contain; 
   cursor: pointer;
+  display: block; 
+  margin: 0 auto; 
 }
 
 .project-title { color: var(--text-white) !important; }
 .project-desc { color: var(--text-grey) !important; }
 
-/* === FOOTER FIX (Match Header Spacing) === */
-
-/* 1. Main Footer Container */
+/* === FOOTER FIX (Match Header) === */
 .page__footer {
   background-color: var(--pitch-black) !important;
   color: var(--text-grey) !important;
   border-top: 1px solid var(--border) !important;
-  
-  /* MATCH HEADER SPACING: Standard header padding is usually around 1em/1rem */
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
-  
-  margin-top: 0 !important; /* Keep it tight to the content */
+  margin-top: 0 !important;
 }
-
-/* 2. Inner Wrapper */
 .custom-footer-inner {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  gap: 20px !important; /* Slightly wider gap like nav links */
+  gap: 20px !important;
   width: 100% !important;
-  
-  /* Reset Height & Padding to let the outer container control spacing */
   height: auto !important;
   padding: 0 !important;
   margin: 0 !important;
-  
   border: none !important;
   background: transparent !important;
 }
-
-/* 3. Footer Links (Match Header Text Size) */
 .custom-footer-inner a {
   margin: 0 !important;
-  color: var(--text-white) !important; /* Use White to match Header Links */
+  color: var(--text-white) !important;
   font-weight: 600;
   text-decoration: none;
-  font-size: 1rem !important; /* Ensure text size matches header */
+  font-size: 1rem !important;
 }
-
-.custom-footer-inner a:hover {
-  color: var(--accent) !important;
-}
-
-/* 4. Kill internal borders & ghosts */
+.custom-footer-inner a:hover { color: var(--accent) !important; }
 .page__footer footer, .page__footer div { border: none !important; box-shadow: none !important; }
 .page__footer::before, .page__footer::after { display: none !important; }
-
-/* Modal Background */
-#imageModal { background-color: rgba(0,0,0,0.95) !important; }
 
 /* Modal Background */
 #imageModal { background-color: rgba(0,0,0,0.95) !important; }
