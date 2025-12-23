@@ -1,0 +1,91 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* === FORCE DARK MODE & MINIMALISM === */
+
+:root {
+  --bg-dark: #0a0a0a;       /* Main Background (Black) */
+  --bg-card: #171717;       /* Card Background (Dark Grey) */
+  --text-white: #ededed;    /* Main Text */
+  --text-grey: #a3a3a3;     /* Muted Text */
+  --accent: #3b82f6;        /* Bright Blue */
+  --border: #262626;        /* Dark Borders */
+}
+
+/* 1. FORCE BACKGROUNDS & FONTS ON EVERYTHING */
+html, body, .page, .page__content, .masthead, .page__footer, .sidebar, .archive {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-white) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* 2. RESET HEADINGS */
+h1, h2, h3, h4, h5, h6, .site-title, .page__title {
+  color: var(--text-white) !important;
+  font-family: 'Inter', sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* 3. FIX NAVIGATION BAR (Remove white) */
+.masthead {
+  background-color: var(--bg-dark) !important;
+  border-bottom: 1px solid var(--border);
+}
+.greedy-nav {
+  background-color: var(--bg-dark) !important;
+}
+.site-title, .masthead__menu-item a {
+  color: var(--text-white) !important;
+}
+
+/* 4. FIX LINKS */
+a {
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #60a5fa !important;
+}
+
+/* 5. PROJECT CARDS (Specific Overrides) */
+.project-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+}
+
+.project-main-image {
+  background-color: #000 !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.project-title {
+  color: var(--text-white) !important;
+}
+
+.project-desc {
+  color: var(--text-grey) !important;
+}
+
+/* 6. GALLERY IMAGES */
+.gallery-img {
+  background-color: #262626 !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* 7. FOOTER CLEANUP */
+.page__footer {
+  background-color: var(--bg-dark) !important;
+  border-top: 1px solid var(--border) !important;
+  color: var(--text-grey) !important;
+}
+
+/* 8. MODAL BACKGROUND */
+#imageModal {
+  background-color: rgba(0,0,0,0.95) !important;
+  backdrop-filter: blur(5px);
+}
+</style>
