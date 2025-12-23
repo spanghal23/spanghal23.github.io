@@ -4,7 +4,7 @@ url: "https://spanghal23.github.io"
 baseurl: ""   # user site → keep this empty
 
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
-minimal_mistakes_skin: "dark"
+minimal_mistakes_skin: "default"
 
 plugins:
   - jekyll-include-cache
