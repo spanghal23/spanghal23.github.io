@@ -7,7 +7,7 @@ title: Projects
 <style>
 /* --- 0. Layout Overrides --- */
 
-/* 1. HIDE THEME HEADER */
+/* 1. HIDE THEME HEADER: This removes the automatic "Projects" title */
 .page__title, .page-header, .page__header {
     display: none !important;
 }
@@ -19,7 +19,7 @@ title: Projects
 }
 
 .projects-container {
-    width: 75vw;
+    width: 75vw; /* 75% of screen width */
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
@@ -66,11 +66,12 @@ title: Projects
     width: 100%;
     height: auto;
     max-height: 600px;
+    /* Use contain for main image so the whole robot is visible */
     object-fit: contain; 
     border-bottom: 1px solid #eee;
     cursor: pointer;
     background-color: #f6f8fa;
-    min-height: 300px; /* Added min-height so blank cards aren't collapsed */
+    min-height: 300px; /* Ensures blank cards have height */
 }
 
 /* --- 4. Content Area --- */
@@ -91,13 +92,14 @@ title: Projects
     color: #586069;
     line-height: 1.6;
     margin-bottom: 30px;
-    width: 100%; 
+    width: 100%; /* Stretches text across the whole card */
     text-align: left;
 }
 
-/* --- 5. Gallery --- */
+/* --- 5. Gallery (No White Space) --- */
 .secondary-gallery {
     display: grid;
+    /* 4 columns to fit all images in one row */
     grid-template-columns: repeat(4, 1fr); 
     gap: 15px; 
     margin-bottom: 30px;
@@ -110,14 +112,15 @@ title: Projects
 
 .gallery-img {
     width: 100%;
-    height: 180px; 
+    height: 180px; /* Fixed height for uniformity */
+    /* COVER fills the box completely (no white space), might crop edges slightly */
     object-fit: cover; 
     border-radius: 4px;
     border: 1px solid #eee;
     margin-bottom: 8px;
     cursor: zoom-in;
     transition: transform 0.2s;
-    background-color: #f6f8fa; /* Grey background for blank images */
+    background-color: #f6f8fa;
 }
 
 .gallery-img:hover {
@@ -128,7 +131,7 @@ title: Projects
 .caption {
     font-size: 0.85rem;
     color: #555;
-    font-style: normal; /* Forced normal based on previous request */
+    font-style: normal; /* Changed to normal as requested */
     text-align: center;
 }
 
@@ -139,7 +142,7 @@ title: Projects
     border-radius: 4px;
     overflow: hidden;
     background: #000;
-    min-height: 50px; /* Ensures container is visible even if empty */
+    min-height: 50px;
 }
 
 video {
@@ -217,49 +220,49 @@ video {
 
         <article class="project-card">
             
-            <img class="project-main-image gallery-trigger" src="" alt="Project 1 Main View">
+            <img class="project-main-image gallery-trigger" src="/assets/images/Final Assembly.png" alt="Robot Arm Main View">
 
             <div class="project-content">
                 
-                <h2 class="project-title">Project Title 1</h2>
+                <h2 class="project-title">Teleoperated Robot Arm</h2>
                 
                 <p class="project-desc">
-                    Project description goes here. Describe the design, fabrication, and validation of the system. Mention specific tools, software, or hardware used (e.g., Python, MATLAB, STM32).
+                    Designed and fabricated a 4-DOF arm with custom 10:1 planetary gearboxes, validated in MATLAB to achieve 18.8 N-m holding torque with a 1.3 safety factor. The 600W system utilizes ODrive S1 FOC and STM32 via CANBUS, driven by a custom Python teleoperation pipeline mapping computer vision for precision control.
                 </p>
 
                 <div class="secondary-gallery">
                     
                     <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="" alt="Detail 1">
-                        <span class="caption">Detail 1</span>
+                        <img class="gallery-img gallery-trigger" src="/assets/images/GUI SC.png" alt="Teleoperation GUI">
+                        <span class="caption">Teleoperation GUI</span>
                     </div>
 
                     <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="" alt="Detail 2">
-                        <span class="caption">Detail 2</span>
+                        <img class="gallery-img gallery-trigger" src="/assets/images/CV Mapping.png" alt="CV Pose Mapping">
+                        <span class="caption">CV Pose Mapping</span>
                     </div>
 
                     <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="" alt="Detail 3">
-                        <span class="caption">Detail 3</span>
+                        <img class="gallery-img gallery-trigger" src="/assets/images/Electrical Schematic.png" alt="Electrical Schematic">
+                        <span class="caption">Electrical Schematic</span>
                     </div>
 
                     <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="" alt="Detail 4">
-                        <span class="caption">Detail 4</span>
+                        <img class="gallery-img gallery-trigger" src="/assets/images/Actuator Design.png" alt="Actuator Design">
+                        <span class="caption">Actuator Design</span>
                     </div>
 
                 </div>
 
                 <div class="video-container">
                     <video controls muted>
-                        <source src="" type="video/mp4">
+                        <source src="/assets/images/Robot_Arm_Demo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
 
                 <div class="repo-link-container">
-                    <a href="#" class="repo-link" target="_blank">
+                    <a href="https://github.com/spanghal23/Teleoperated_Robot_Arm.git" class="repo-link" target="_blank">
                         View Project Repository on GitHub &rarr;
                     </a>
                 </div>
@@ -276,7 +279,7 @@ video {
                 <h2 class="project-title">Project Title 2</h2>
                 
                 <p class="project-desc">
-                    Project description goes here. Describe the design, fabrication, and validation of the system. Mention specific tools, software, or hardware used (e.g., Python, MATLAB, STM32).
+                    Description for your second project goes here.
                 </p>
 
                 <div class="secondary-gallery">
@@ -328,7 +331,7 @@ video {
                 <h2 class="project-title">Project Title 3</h2>
                 
                 <p class="project-desc">
-                    Project description goes here. Describe the design, fabrication, and validation of the system. Mention specific tools, software, or hardware used (e.g., Python, MATLAB, STM32).
+                    Description for your third project goes here.
                 </p>
 
                 <div class="secondary-gallery">
@@ -388,9 +391,11 @@ video {
 
     images.forEach(function(img) {
         img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
+            if(this.getAttribute('src')) { // Only open if src is not empty
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
         }
     });
 
