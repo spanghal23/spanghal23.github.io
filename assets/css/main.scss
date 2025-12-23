@@ -82,32 +82,44 @@ a:hover {
 .project-title { color: var(--text-white) !important; }
 .project-desc { color: var(--text-grey) !important; }
 
-/* === FOOTER FIX (Aggressive) === */
 
-/* 1. The Main Container: This keeps the long, full-width line */
+/* === FOOTER FIX (The "Scorched Earth" Method) === */
+
+/* 1. Target the Main Footer Container (Keep the long line) */
 .page__footer {
   background-color: var(--pitch-black) !important;
   color: var(--text-grey) !important;
-  border-top: 1px solid var(--border) !important;
+  border-top: 1px solid var(--border) !important; /* This is the LONG line you want */
   padding-top: 2em;
-  padding-bottom: 2em;
+  margin-top: 2em;
 }
 
-/* 2. The Internal Elements: Remove ALL internal borders */
-.page__footer footer, 
-.page__footer-follow,
-.page__footer .wrapper {
+/* 2. Target DIRECT children to remove their borders */
+.page__footer > * {
   border: none !important;
   border-top: none !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
 }
 
-/* 3. Text & Link Colors in Footer */
+/* 3. Target DEEPER children (The Social Links Wrapper) */
+.page__footer-follow,
 .page__footer-copyright {
-  color: var(--text-grey) !important;
+  border: none !important;
+  border-top: none !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
+/* 4. Universal Reset for Footer Internals (Failsafe) */
+/* This selects ANY div, footer, or section inside .page__footer and kills its border */
+.page__footer div, 
+.page__footer footer, 
+.page__footer section {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Fix Text Colors in Footer */
+.page__footer-copyright, 
 .page__footer-follow .social-icons .svg-inline--fa {
   color: var(--text-grey) !important;
 }
