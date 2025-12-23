@@ -6,20 +6,15 @@ title: Projects
 
 <style>
 /* --- 0. Layout Overrides --- */
+.page__title, .page-header, .page__header { display: none !important; }
 
-/* 1. HIDE THEME HEADER: This removes the automatic "Projects" title */
-.page__title, .page-header, .page__header {
-    display: none !important;
-}
-
-/* 2. FORCE WIDE LAYOUT */
 .page__inner-wrap {
     width: 100% !important;
     max-width: 100% !important;
 }
 
 .projects-container {
-    width: 75vw; /* 75% of screen width */
+    width: 75vw;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
@@ -35,7 +30,6 @@ title: Projects
     margin-bottom: 40px;
     padding-top: 10px;
 }
-
 .page-header-text p {
     font-size: 1.2rem;
     color: #666;
@@ -66,18 +60,15 @@ title: Projects
     width: 100%;
     height: auto;
     max-height: 600px;
-    /* Use contain for main image so the whole robot is visible */
     object-fit: contain; 
     border-bottom: 1px solid #eee;
     cursor: pointer;
     background-color: #f6f8fa;
-    min-height: 300px; /* Ensures blank cards have height */
+    min-height: 300px;
 }
 
 /* --- 4. Content Area --- */
-.project-content {
-    padding: 30px;
-}
+.project-content { padding: 30px; }
 
 .project-title {
     font-size: 1.8rem;
@@ -92,28 +83,23 @@ title: Projects
     color: #586069;
     line-height: 1.6;
     margin-bottom: 30px;
-    width: 100%; /* Stretches text across the whole card */
+    width: 100%; 
     text-align: left;
 }
 
-/* --- 5. Gallery (No White Space) --- */
+/* --- 5. Gallery --- */
 .secondary-gallery {
     display: grid;
-    /* 4 columns to fit all images in one row */
     grid-template-columns: repeat(4, 1fr); 
     gap: 15px; 
     margin-bottom: 30px;
 }
 
-.gallery-item {
-    display: flex;
-    flex-direction: column;
-}
+.gallery-item { display: flex; flex-direction: column; }
 
 .gallery-img {
     width: 100%;
-    height: 180px; /* Fixed height for uniformity */
-    /* COVER fills the box completely (no white space), might crop edges slightly */
+    height: 180px; 
     object-fit: cover; 
     border-radius: 4px;
     border: 1px solid #eee;
@@ -131,7 +117,7 @@ title: Projects
 .caption {
     font-size: 0.85rem;
     color: #555;
-    font-style: normal; /* Changed to normal as requested */
+    font-style: normal;
     text-align: center;
 }
 
@@ -165,10 +151,7 @@ video {
     color: #0366d6;
     text-decoration: none;
 }
-
-.repo-link:hover {
-    text-decoration: underline;
-}
+.repo-link:hover { text-decoration: underline; }
 
 /* --- 8. Lightbox --- */
 #imageModal {
@@ -231,27 +214,22 @@ video {
                 </p>
 
                 <div class="secondary-gallery">
-                    
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="/assets/images/GUI SC.png" alt="Teleoperation GUI">
                         <span class="caption">Teleoperation GUI</span>
                     </div>
-
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="/assets/images/CV Mapping.png" alt="CV Pose Mapping">
                         <span class="caption">CV Pose Mapping</span>
                     </div>
-
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="/assets/images/Electrical Schematic.png" alt="Electrical Schematic">
                         <span class="caption">Electrical Schematic</span>
                     </div>
-
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="/assets/images/Actuator Design.png" alt="Actuator Design">
                         <span class="caption">Actuator Design</span>
                     </div>
-
                 </div>
 
                 <div class="video-container">
@@ -282,30 +260,6 @@ video {
                     Description for your second project goes here.
                 </p>
 
-                <div class="secondary-gallery">
-                    
-                    <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="" alt="Detail 1">
-                        <span class="caption">Detail 1</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="" alt="Detail 2">
-                        <span class="caption">Detail 2</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="" alt="Detail 3">
-                        <span class="caption">Detail 3</span>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="" alt="Detail 4">
-                        <span class="caption">Detail 4</span>
-                    </div>
-
-                </div>
-
                 <div class="video-container">
                     <video controls muted>
                         <source src="" type="video/mp4">
@@ -313,13 +267,7 @@ video {
                     </video>
                 </div>
 
-                <div class="repo-link-container">
-                    <a href="#" class="repo-link" target="_blank">
-                        View Project Repository on GitHub &rarr;
-                    </a>
                 </div>
-
-            </div>
         </article>
 
         <article class="project-card">
@@ -335,27 +283,22 @@ video {
                 </p>
 
                 <div class="secondary-gallery">
-                    
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="" alt="Detail 1">
                         <span class="caption">Detail 1</span>
                     </div>
-
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="" alt="Detail 2">
                         <span class="caption">Detail 2</span>
                     </div>
-
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="" alt="Detail 3">
                         <span class="caption">Detail 3</span>
                     </div>
-
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="" alt="Detail 4">
                         <span class="caption">Detail 4</span>
                     </div>
-
                 </div>
 
                 <div class="video-container">
@@ -391,7 +334,7 @@ video {
 
     images.forEach(function(img) {
         img.onclick = function(){
-            if(this.getAttribute('src')) { // Only open if src is not empty
+            if(this.getAttribute('src')) { 
                 modal.style.display = "block";
                 modalImg.src = this.src;
                 captionText.innerHTML = this.alt;
