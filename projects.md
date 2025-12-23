@@ -30,6 +30,7 @@ title: Projects
     height: 250px;
     object-fit: cover;
     border-bottom: 1px solid #eee;
+    cursor: pointer; /* Indicates clickable */
 }
 
 /* --- 4. Text Content --- */
@@ -51,10 +52,10 @@ title: Projects
     margin-bottom: 20px;
 }
 
-/* --- 5. Secondary Images Grid (Wiring, GUI, etc) --- */
+/* --- 5. Secondary Images Grid --- */
 .secondary-gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin-bottom: 25px;
 }
@@ -66,17 +67,18 @@ title: Projects
 
 .gallery-img {
     width: 100%;
-    height: 150px; /* Fixed height for uniformity */
+    height: 150px;
     object-fit: cover;
     border-radius: 4px;
     border: 1px solid #eee;
     margin-bottom: 5px;
-    cursor: pointer; /* Suggests it might be viewable */
-    transition: transform 0.2s;
+    cursor: zoom-in; /* Change cursor to magnifying glass */
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .gallery-img:hover {
     transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .caption {
@@ -124,13 +126,68 @@ title: Projects
 .repo-link:hover {
     text-decoration: underline;
 }
+
+/* --- 8. Lightbox Modal (Hidden by default) --- */
+#imageModal {
+    display: none; /* Hidden */
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+}
+
+/* Modal Content (The Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* Caption of Modal Image */
+#modalCaption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
 </style>
 
 <div class="projects-grid">
 
     <article class="project-card">
         
-        <img class="project-main-image" src="/assets/images/robot-arm.jpg" alt="Teleoperated Robot Arm Main View">
+        <img class="project-main-image gallery-trigger" src="/assets/images/robot-arm.jpg" alt="Teleoperated Robot Arm Main View">
 
         <div class="project-content">
             
@@ -142,22 +199,22 @@ title: Projects
             <div class="secondary-gallery">
                 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="/assets/images/gui-screenshot.jpg" alt="Python GUI">
+                    <img class="gallery-img gallery-trigger" src="/assets/images/gui-screenshot.jpg" alt="Python Teleoperation GUI">
                     <span class="caption">Python Teleoperation GUI</span>
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="/assets/images/cv-demo.jpg" alt="CV Pipeline">
+                    <img class="gallery-img gallery-trigger" src="/assets/images/cv-demo.jpg" alt="Computer Vision Pose Tracking">
                     <span class="caption">Computer Vision Pose Tracking</span>
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="/assets/images/wiring-diagram.jpg" alt="Wiring Diagram">
+                    <img class="gallery-img gallery-trigger" src="/assets/images/wiring-diagram.jpg" alt="Electrical & CANBUS Architecture">
                     <span class="caption">Electrical & CANBUS Architecture</span>
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="/assets/images/actuator-detail.jpg" alt="Actuator Detail">
+                    <img class="gallery-img gallery-trigger" src="/assets/images/actuator-detail.jpg" alt="Custom Planetary Actuator">
                     <span class="caption">Custom Planetary Actuator</span>
                 </div>
 
@@ -176,3 +233,43 @@ title: Projects
         </div>
     </article>
     </div>
+
+<div id="imageModal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="modalCaption"></div>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("modalCaption");
+
+    // Get all images with class "gallery-trigger"
+    var images = document.querySelectorAll(".gallery-trigger");
+
+    // Add click event to all images
+    images.forEach(function(img) {
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt; // Uses the alt text as caption
+        }
+    });
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+        modal.style.display = "none";
+    }
+
+    // Also close if clicking anywhere on the background
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
