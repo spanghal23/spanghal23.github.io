@@ -250,22 +250,23 @@ video {
 
         <article class="project-card">
             
-            <img class="project-main-image gallery-trigger" src="" alt="Project 2 Main View">
+            <img class="project-main-image gallery-trigger" src="/assets/images/Ball Lev.png" alt="Ball Levitation System">
 
             <div class="project-content">
                 
-                <h2 class="project-title">Project Title 2</h2>
+                <h2 class="project-title">Hand Commanded Ball Levitation</h2>
                 
                 <p class="project-desc">
-                    Description for your second project goes here.
+                    Achieved <2mm position accuracy via a PD-controlled closed-loop system validated by a ~95% accurate physics model. Implemented 10-point moving average and Kalman filtering to reject sensor noise and optimize servo-actuated throttle response.
                 </p>
 
-                <div class="video-container">
-                    <video controls muted>
-                        <source src="" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+<div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/watch?v=rYfxVyBq8CA" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
 
                 </div>
         </article>
