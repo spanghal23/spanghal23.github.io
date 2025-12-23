@@ -1,5 +1,5 @@
 ---
-# Only the main Sass file needs front matter (the dashes are important)
+# Front matter is required
 ---
 
 @charset "utf-8";
@@ -11,7 +11,7 @@
 /* 2. IMPORT INTER FONT */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* 3. FORCE PITCH BLACK VARIABLES */
+/* 3. PITCH BLACK VARIABLES */
 :root {
   --pitch-black: #000000;
   --dark-grey: #121212;
@@ -21,52 +21,64 @@
   --border: #333333;
 }
 
-/* 4. OVERRIDES */
+/* 4. NUCLEAR OVERRIDES */
 
-/* Body & Main Background */
-body, html, .page, .page__content, .archive {
+/* Force Body Background */
+html, body {
   background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
   font-family: 'Inter', sans-serif !important;
 }
 
-/* HEADER FIX (This targets the white bar) */
+/* === HEADER FIX (The Critical Part) === */
+
+/* Target the outer shell */
 .masthead {
   background-color: var(--pitch-black) !important;
   border-bottom: 1px solid var(--border) !important;
 }
 
+/* Target the INNER shell (This is the one staying white in your screenshots) */
 .masthead__inner-wrap {
   background-color: var(--pitch-black) !important;
 }
 
-/* Navigation Links */
+/* Target the Navigation Bar itself */
 .greedy-nav {
   background-color: var(--pitch-black) !important;
 }
 
-.greedy-nav a {
+/* Force links in header to be white */
+.site-title, .site-title a, .masthead__menu-item a {
   color: var(--text-white) !important;
 }
 
-.site-title, .masthead__menu-item a {
+/* Mobile Toggle Button */
+.greedy-nav button {
+  background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
-  font-weight: 600 !important;
 }
 
-/* Project Cards */
-.project-card {
-  background-color: var(--dark-grey) !important;
+/* Dropdown Menu (Mobile) */
+.greedy-nav .hidden-links {
+  background-color: var(--pitch-black) !important;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
-.project-title {
+/* === CONTENT FIXES === */
+
+/* Main Content Area */
+#main, .page__content, .archive {
+  background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
 }
 
-.project-desc {
-  color: var(--text-grey) !important;
+/* Sidebar (About Me section) */
+.sidebar {
+  background-color: var(--pitch-black) !important;
+}
+.sidebar__right {
+  background-color: var(--pitch-black) !important;
 }
 
 /* Footer */
@@ -84,6 +96,16 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* === PROJECT CARDS === */
+.project-card {
+  background-color: var(--dark-grey) !important;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.project-title { color: var(--text-white) !important; }
+.project-desc { color: var(--text-grey) !important; }
 
 /* Modal Background */
 #imageModal {
