@@ -27,10 +27,12 @@ title: Projects
 /* --- 3. Main Top Image --- */
 .project-main-image {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: auto; /* CHANGED: Allows image to show full height without cropping */
+    max-height: 500px; /* Optional cap so it doesn't take up the WHOLE screen */
+    object-fit: contain; /* CHANGED: Ensures the whole image is seen */
     border-bottom: 1px solid #eee;
-    cursor: pointer; /* Indicates clickable */
+    cursor: pointer;
+    background-color: #f6f8fa; /* Light grey background for non-rectangular images */
 }
 
 /* --- 4. Text Content --- */
@@ -55,8 +57,8 @@ title: Projects
 /* --- 5. Secondary Images Grid --- */
 .secondary-gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: 1fr; /* CHANGED: 1 Column so images are full width (bigger) */
+    gap: 20px;
     margin-bottom: 25px;
 }
 
@@ -67,46 +69,41 @@ title: Projects
 
 .gallery-img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: auto; /* CHANGED: Let height scale naturally so diagrams aren't squished */
+    object-fit: contain;
     border-radius: 4px;
     border: 1px solid #eee;
     margin-bottom: 5px;
-    cursor: zoom-in; /* Change cursor to magnifying glass */
+    cursor: zoom-in;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .gallery-img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .caption {
-    font-size: 0.8rem;
-    color: #666;
+    font-size: 0.85rem;
+    color: #555;
     font-style: italic;
     text-align: center;
+    margin-top: 5px;
 }
 
 /* --- 6. Video Section --- */
 .video-container {
-    position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    background: #000;
     margin-bottom: 20px;
     border-radius: 4px;
     overflow: hidden;
+    background: #000;
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+video {
     width: 100%;
-    height: 100%;
-    border: none;
+    height: auto;
+    display: block;
 }
 
 /* --- 7. Repo Link --- */
@@ -127,9 +124,9 @@ title: Projects
     text-decoration: underline;
 }
 
-/* --- 8. Lightbox Modal (Hidden by default) --- */
+/* --- 8. Lightbox Modal --- */
 #imageModal {
-    display: none; /* Hidden */
+    display: none;
     position: fixed;
     z-index: 9999;
     padding-top: 50px;
@@ -138,20 +135,18 @@ title: Projects
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+    background-color: rgba(0,0,0,0.9);
 }
 
-/* Modal Content (The Image) */
 .modal-content {
     margin: auto;
     display: block;
-    max-width: 90%;
-    max-height: 85vh;
+    max-width: 95%; /* Increased width for better visibility */
+    max-height: 90vh;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
-/* Caption of Modal Image */
 #modalCaption {
     margin: auto;
     display: block;
@@ -163,7 +158,6 @@ title: Projects
     height: 150px;
 }
 
-/* Close Button */
 .close {
     position: absolute;
     top: 15px;
@@ -221,7 +215,10 @@ title: Projects
             </div>
 
             <div class="video-container">
-                <iframe src="/assets/images/Robot_Arm_Demo.mp4" title="Project Demo" allowfullscreen></iframe>
+                <video controls>
+                    <source src="/assets/images/Robot_Arm_Demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
             <div class="repo-link-container">
@@ -232,7 +229,7 @@ title: Projects
 
         </div>
     </article>
-    </div>
+</div>
 
 <div id="imageModal">
   <span class="close">&times;</span>
@@ -241,32 +238,23 @@ title: Projects
 </div>
 
 <script>
-    // Get the modal
     var modal = document.getElementById("imageModal");
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("modalCaption");
-
-    // Get all images with class "gallery-trigger"
     var images = document.querySelectorAll(".gallery-trigger");
 
-    // Add click event to all images
     images.forEach(function(img) {
         img.onclick = function(){
             modal.style.display = "block";
             modalImg.src = this.src;
-            captionText.innerHTML = this.alt; // Uses the alt text as caption
+            captionText.innerHTML = this.alt;
         }
     });
 
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function() { 
         modal.style.display = "none";
     }
-
-    // Also close if clicking anywhere on the background
     modal.onclick = function(event) {
         if (event.target === modal) {
             modal.style.display = "none";
