@@ -22,8 +22,6 @@
 }
 
 /* 4. NUCLEAR OVERRIDES */
-
-/* Force Body Background */
 html, body {
   background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
@@ -35,17 +33,10 @@ html, body {
   background-color: var(--pitch-black) !important;
   border-bottom: 1px solid var(--border) !important;
 }
-.masthead__inner-wrap {
+.masthead__inner-wrap, .greedy-nav, .greedy-nav button {
   background-color: var(--pitch-black) !important;
 }
-.greedy-nav {
-  background-color: var(--pitch-black) !important;
-}
-.site-title, .site-title a, .masthead__menu-item a {
-  color: var(--text-white) !important;
-}
-.greedy-nav button {
-  background-color: var(--pitch-black) !important;
+.site-title, .site-title a, .masthead__menu-item a, .greedy-nav button {
   color: var(--text-white) !important;
 }
 .greedy-nav .hidden-links {
@@ -53,18 +44,24 @@ html, body {
   border: 1px solid var(--border);
 }
 
-/* === CONTENT FIXES === */
+/* === CONTENT FIXES (GAP REMOVAL) === */
 #main, .page__content, .archive, .sidebar, .sidebar__right {
   background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
 }
-a {
-  color: var(--accent) !important;
-  text-decoration: none;
+
+/* THIS REMOVES THE GAP ABOVE THE FOOTER */
+.page__content {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
-a:hover {
-  text-decoration: underline;
+
+.archive {
+  margin-bottom: 0 !important; 
 }
+
+a { color: var(--accent) !important; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* === PROJECT CARDS === */
 .project-card {
@@ -75,7 +72,7 @@ a:hover {
 .project-title { color: var(--text-white) !important; }
 .project-desc { color: var(--text-grey) !important; }
 
-/* === FOOTER FIX (Aggressive) === */
+/* === FOOTER FIX (Zero Height) === */
 
 /* 1. Main Footer Container */
 .page__footer {
@@ -83,52 +80,42 @@ a:hover {
   color: var(--text-grey) !important;
   border-top: 1px solid var(--border) !important;
   
-  /* FORCE ZERO PADDING ON OUTER BOX */
+  /* REMOVE ALL SPACING */
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  margin-top: 1rem !important; /* Adjust distance from content */
+  margin-top: 0 !important; /* This pulls it tight to the content above */
 }
 
-/* 2. Inner Wrapper */
+/* 2. Inner Wrapper (The custom HTML you added) */
 .custom-footer-inner {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  gap: 12px !important;
-  
-  /* FORCE ZERO PADDING ON INNER BOX */
-  padding: 0 !important; 
-  
-  /* Ensure height is controlled by text only */
-  height: auto !important;
-  min-height: 40px !important; /* Optional: Sets a minimum clickable height */
-  
+  gap: 15px !important;
   width: 100% !important;
+  
+  /* Height Control */
+  height: 60px !important; /* Fixed height to force it to be small */
+  padding: 0 !important;
+  margin: 0 !important;
+  
   border: none !important;
   background: transparent !important;
 }
 
-/* 3. Style the Footer Links */
+/* 3. Footer Links */
 .custom-footer-inner a {
   margin: 0 !important;
   color: var(--text-grey) !important;
   font-weight: 600;
   text-decoration: none;
-  display: inline-block; /* Fixes vertical alignment */
-  line-height: 40px; /* Centers text vertically if you use min-height */
+  line-height: 60px; /* Vertically centers text in the 60px bar */
 }
+.custom-footer-inner a:hover { color: var(--accent) !important; }
 
-.custom-footer-inner a:hover {
-  color: var(--accent) !important;
-}
-
-/* 4. Kill internal borders */
-.page__footer footer, .page__footer div {
-  border: none !important;
-  box-shadow: none !important;
-}
+/* 4. Kill internal borders & ghosts */
+.page__footer footer, .page__footer div { border: none !important; box-shadow: none !important; }
+.page__footer::before, .page__footer::after { display: none !important; }
 
 /* Modal Background */
-#imageModal {
-  background-color: rgba(0,0,0,0.95) !important;
-}
+#imageModal { background-color: rgba(0,0,0,0.95) !important; }
