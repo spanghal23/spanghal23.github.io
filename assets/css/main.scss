@@ -82,9 +82,9 @@ a:hover {
   background-color: var(--pitch-black) !important;
   color: var(--text-grey) !important;
   border-top: 1px solid var(--border) !important;
-  padding-top: 0.5rem !important; /* Minimized padding */
-  padding-bottom: 0.5rem !important;
-  margin-top: 2rem !important;
+  padding-top: 0rem !important; /* Minimized padding */
+  padding-bottom: 0rem !important;
+  margin-top: 1rem !important;
 }
 
 /* 2. Your Custom Footer Inner Logic (Replaces inline styles) */
