@@ -231,22 +231,22 @@ video {
                     
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="/assets/images/GUI SC.png" alt="Teleoperation GUI">
-                        <span class="caption">Teleoperation GUI</span>
+                        <span class="caption" style="font-style: normal;">Teleoperation GUI</span>
                     </div>
 
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="/assets/images/CV Mapping.png" alt="CV Pose Mapping">
-                        <span class="caption">CV Pose Mapping</span>
+                        <span class="caption" style="font-style: normal;">CV Pose Mapping</span>
                     </div>
 
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="/assets/images/Electrical Schematic.png" alt="Electrical Schematic">
-                        <span class="caption">Electrical Schematic</span>
+                        <span class="caption" style="font-style: normal;">Electrical Schematic</span>
                     </div>
 
                     <div class="gallery-item">
                         <img class="gallery-img gallery-trigger" src="/assets/images/Actuator Design.png" alt="Actuator Design">
-                        <span class="caption">Actuator Design</span>
+                        <span class="caption" style="font-style: normal;">Actuator Design</span>
                     </div>
 
                 </div>
@@ -299,10 +299,4 @@ video {
         }
     }
 
-    <style>
-  .caption, figcaption {
-    font-style: normal !important;
-    text-transform: none !important; /* Optional: Stops it from being uppercase if set */
-  }
-</style>
 </script>
