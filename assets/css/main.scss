@@ -30,25 +30,21 @@ html, body {
   font-family: 'Inter', sans-serif !important;
 }
 
-/* === HEADER FIX (The Critical Part) === */
-
-/* Target the outer shell */
+/* === HEADER FIX === */
 .masthead {
   background-color: var(--pitch-black) !important;
   border-bottom: 1px solid var(--border) !important;
 }
 
-/* Target the INNER shell (This is the one staying white in your screenshots) */
 .masthead__inner-wrap {
   background-color: var(--pitch-black) !important;
 }
 
-/* Target the Navigation Bar itself */
 .greedy-nav {
   background-color: var(--pitch-black) !important;
 }
 
-/* Force links in header to be white */
+/* Header Links */
 .site-title, .site-title a, .masthead__menu-item a {
   color: var(--text-white) !important;
 }
@@ -59,33 +55,15 @@ html, body {
   color: var(--text-white) !important;
 }
 
-/* Dropdown Menu (Mobile) */
 .greedy-nav .hidden-links {
   background-color: var(--pitch-black) !important;
   border: 1px solid var(--border);
 }
 
 /* === CONTENT FIXES === */
-
-/* Main Content Area */
-#main, .page__content, .archive {
+#main, .page__content, .archive, .sidebar, .sidebar__right {
   background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
-}
-
-/* Sidebar (About Me section) */
-.sidebar {
-  background-color: var(--pitch-black) !important;
-}
-.sidebar__right {
-  background-color: var(--pitch-black) !important;
-}
-
-/* Footer */
-.page__footer {
-  background-color: var(--pitch-black) !important;
-  color: var(--text-grey) !important;
-  border-top: 1px solid var(--border);
 }
 
 /* Links */
@@ -106,6 +84,19 @@ a:hover {
 
 .project-title { color: var(--text-white) !important; }
 .project-desc { color: var(--text-grey) !important; }
+
+/* === FOOTER FIX (Removes the extra line) === */
+.page__footer {
+  background-color: var(--pitch-black) !important;
+  color: var(--text-grey) !important;
+  /* This creates the main long line. Keep this or set to 'none' if you want NO lines. */
+  border-top: 1px solid var(--border); 
+}
+
+/* This targets the inner footer wrapper that creates the shorter/duplicate line */
+.page__footer footer, .page__footer-follow {
+  border-top: none !important; 
+}
 
 /* Modal Background */
 #imageModal {
