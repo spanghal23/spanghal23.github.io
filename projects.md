@@ -323,12 +323,6 @@ video {
                     </video>
                 </div>
 
-                <div class="repo-link-container">
-                    <a href="#" class="repo-link" target="_blank">
-                        View Project Repository on GitHub &rarr;
-                    </a>
-                </div>
-
             </div>
         </article>
 
