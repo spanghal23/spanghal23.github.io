@@ -75,29 +75,35 @@ a:hover {
 .project-title { color: var(--text-white) !important; }
 .project-desc { color: var(--text-grey) !important; }
 
-/* === FOOTER FIX (Custom Implementation) === */
+/* === FOOTER FIX (Aggressive) === */
 
-/* 1. Main Footer Container (The long top line) */
+/* 1. Main Footer Container */
 .page__footer {
   background-color: var(--pitch-black) !important;
   color: var(--text-grey) !important;
   border-top: 1px solid var(--border) !important;
-  padding-top: 0rem !important; /* Minimized padding */
-  padding-bottom: 0rem !important;
-  margin-top: 1rem !important;
+  
+  /* FORCE ZERO PADDING ON OUTER BOX */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 1rem !important; /* Adjust distance from content */
 }
 
-/* 2. Your Custom Footer Inner Logic (Replaces inline styles) */
+/* 2. Inner Wrapper */
 .custom-footer-inner {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   gap: 12px !important;
-  padding: 0.15rem 0 !important;
-  width: 100% !important;
-  line-height: 1 !important;
   
-  /* CRITICAL: Ensure no border here */
+  /* FORCE ZERO PADDING ON INNER BOX */
+  padding: 0 !important; 
+  
+  /* Ensure height is controlled by text only */
+  height: auto !important;
+  min-height: 40px !important; /* Optional: Sets a minimum clickable height */
+  
+  width: 100% !important;
   border: none !important;
   background: transparent !important;
 }
@@ -107,15 +113,16 @@ a:hover {
   margin: 0 !important;
   color: var(--text-grey) !important;
   font-weight: 600;
-  transition: color 0.2s;
+  text-decoration: none;
+  display: inline-block; /* Fixes vertical alignment */
+  line-height: 40px; /* Centers text vertically if you use min-height */
 }
 
 .custom-footer-inner a:hover {
   color: var(--accent) !important;
-  text-decoration: none;
 }
 
-/* 4. Kill any other internal borders (Safety Net) */
+/* 4. Kill internal borders */
 .page__footer footer, .page__footer div {
   border: none !important;
   box-shadow: none !important;
