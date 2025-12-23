@@ -5,35 +5,47 @@ title: Projects
 ---
 
 <style>
-/* --- 0. Layout Overrides (Widen the Page) --- */
-/* This forces the theme's default container to allow wider content */
+/* --- 0. Layout Overrides --- */
 .page__inner-wrap {
     width: 100% !important;
     max-width: 100% !important;
 }
 
-/* The actual container for your projects */
 .projects-container {
-    width: 75vw; /* Takes up 75% of the screen width */
-    max-width: 1400px; /* Cap it on huge monitors */
-    margin: 0 auto; /* Centers it horizontally */
+    width: 75vw; /* Wide layout */
+    max-width: 1400px;
+    margin: 0 auto;
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -37.5vw; /* Half of 75vw to center it perfectly */
+    margin-left: -37.5vw;
     margin-right: -37.5vw;
 }
 
-/* --- 1. Main Grid Layout --- */
-.projects-grid {
-    display: grid;
-    /* This creates a flexible grid inside our new wide container */
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); 
-    gap: 40px;
-    padding: 20px 0;
+/* --- 1. Header Styling --- */
+.page-header-text {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* --- 2. Card Container --- */
+.page-header-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-header-text p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* --- 2. Card Styling --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column of wide cards */
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
 .project-card {
     background: #fff;
     border: 1px solid #e1e4e8;
@@ -44,42 +56,45 @@ title: Projects
     flex-direction: column;
 }
 
-/* --- 3. Main Top Image --- */
+/* --- 3. Main Image --- */
 .project-main-image {
     width: 100%;
-    height: auto; 
-    max-height: 600px; /* Increased height cap for wider screens */
+    height: auto;
+    max-height: 600px;
     object-fit: contain;
     border-bottom: 1px solid #eee;
     cursor: pointer;
     background-color: #f6f8fa;
 }
 
-/* --- 4. Text Content --- */
+/* --- 4. Content Area --- */
 .project-content {
-    padding: 30px; /* More padding for a spacious feel */
+    padding: 30px;
 }
 
 .project-title {
-    font-size: 1.8rem; /* Larger font for wider layout */
+    font-size: 1.8rem;
     font-weight: 700;
-    margin: 0 0 15px 0;
+    margin: 0 0 20px 0;
     color: #24292e;
+    text-align: center; /* CENTERED */
 }
 
 .project-desc {
-    font-size: 1.05rem; /* Slightly larger text for readability */
+    font-size: 1.05rem;
     color: #586069;
     line-height: 1.6;
     margin-bottom: 30px;
-    max-width: 900px; /* Keeps text lines from getting too long to read */
+    width: 100%; /* STRETCHES ACROSS CARD */
+    text-align: left;
 }
 
-/* --- 5. Secondary Images Grid --- */
+/* --- 5. Gallery (Fixed Spacing) --- */
 .secondary-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 Columns side-by-side */
-    gap: 20px;
+    /* Changed to 4 columns to reduce white space */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; /* Tighter gap */
     margin-bottom: 30px;
 }
 
@@ -90,30 +105,28 @@ title: Projects
 
 .gallery-img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 180px; /* Fixed height forces uniformity */
+    object-fit: cover; /* CROPS slightly to fill the box (No white space) */
     border-radius: 4px;
     border: 1px solid #eee;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     cursor: zoom-in;
-    transition: transform 0.2s, box-shadow 0.2s;
-    background-color: #fafafa;
+    transition: transform 0.2s;
 }
 
 .gallery-img:hover {
-    transform: scale(1.01);
+    transform: scale(1.03);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .caption {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #555;
     font-style: italic;
     text-align: center;
-    margin-top: 8px;
 }
 
-/* --- 6. Video Section --- */
+/* --- 6. Video --- */
 .video-container {
     width: 100%;
     margin-bottom: 30px;
@@ -126,7 +139,7 @@ video {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 700px; /* Prevents video from taking over entire vertical screen */
+    max-height: 600px;
 }
 
 /* --- 7. Repo Link --- */
@@ -147,7 +160,7 @@ video {
     text-decoration: underline;
 }
 
-/* --- 8. Lightbox Modal --- */
+/* --- 8. Lightbox --- */
 #imageModal {
     display: none;
     position: fixed;
@@ -167,7 +180,6 @@ video {
     max-width: 90%;
     max-height: 90vh;
     border-radius: 5px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
 #modalCaption {
@@ -188,19 +200,17 @@ video {
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
     cursor: pointer;
 }
 </style>
 
 <div class="projects-container">
+    
+    <div class="page-header-text">
+        <h1>Projects</h1>
+        <p>Here are some of my most exciting projects during my time as an engineer!</p>
+    </div>
+
     <div class="projects-grid">
 
         <article class="project-card">
@@ -210,6 +220,7 @@ video {
             <div class="project-content">
                 
                 <h2 class="project-title">Teleoperated Robot Arm</h2>
+                
                 <p class="project-desc">
                     Designed and fabricated a 4-DOF arm with custom 10:1 planetary gearboxes, validated in MATLAB to achieve 18.8 N-m holding torque with a 1.3 safety factor. The 600W system utilizes ODrive S1 FOC and STM32 via CANBUS, driven by a custom Python teleoperation pipeline mapping computer vision for precision control.
                 </p>
@@ -222,13 +233,13 @@ video {
                     </div>
 
                     <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="/assets/images/CV Mapping.png" alt="Computer Vision Pose Mapping">
-                        <span class="caption">Computer Vision Pose Mapping</span>
+                        <img class="gallery-img gallery-trigger" src="/assets/images/CV Mapping.png" alt="CV Pose Mapping">
+                        <span class="caption">CV Pose Mapping</span>
                     </div>
 
                     <div class="gallery-item">
-                        <img class="gallery-img gallery-trigger" src="/assets/images/Electrical Schematic.png" alt="Electrical Architecture">
-                        <span class="caption">Electrical Architecture</span>
+                        <img class="gallery-img gallery-trigger" src="/assets/images/Electrical Schematic.png" alt="Electrical Schematic">
+                        <span class="caption">Electrical Schematic</span>
                     </div>
 
                     <div class="gallery-item">
