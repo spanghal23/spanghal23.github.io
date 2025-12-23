@@ -35,24 +35,19 @@ html, body {
   background-color: var(--pitch-black) !important;
   border-bottom: 1px solid var(--border) !important;
 }
-
 .masthead__inner-wrap {
   background-color: var(--pitch-black) !important;
 }
-
 .greedy-nav {
   background-color: var(--pitch-black) !important;
 }
-
 .site-title, .site-title a, .masthead__menu-item a {
   color: var(--text-white) !important;
 }
-
 .greedy-nav button {
   background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
 }
-
 .greedy-nav .hidden-links {
   background-color: var(--pitch-black) !important;
   border: 1px solid var(--border);
@@ -63,7 +58,6 @@ html, body {
   background-color: var(--pitch-black) !important;
   color: var(--text-white) !important;
 }
-
 a {
   color: var(--accent) !important;
   text-decoration: none;
@@ -78,50 +72,53 @@ a:hover {
   border: 1px solid var(--border);
   box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
-
 .project-title { color: var(--text-white) !important; }
 .project-desc { color: var(--text-grey) !important; }
 
+/* === FOOTER FIX (Custom Implementation) === */
 
-/* === FOOTER FIX (The "Scorched Earth" Method) === */
-
-/* 1. Target the Main Footer Container (Keep the long line) */
+/* 1. Main Footer Container (The long top line) */
 .page__footer {
   background-color: var(--pitch-black) !important;
   color: var(--text-grey) !important;
-  border-top: 1px solid var(--border) !important; /* This is the LONG line you want */
-  padding-top: 2em;
-  margin-top: 2em;
+  border-top: 1px solid var(--border) !important;
+  padding-top: 1rem !important; /* Minimized padding */
+  padding-bottom: 1rem !important;
+  margin-top: 2rem !important;
 }
 
-/* 2. Target DIRECT children to remove their borders */
-.page__footer > * {
+/* 2. Your Custom Footer Inner Logic (Replaces inline styles) */
+.custom-footer-inner {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 0.15rem 0 !important;
+  width: 100% !important;
+  line-height: 1 !important;
+  
+  /* CRITICAL: Ensure no border here */
   border: none !important;
-  border-top: none !important;
+  background: transparent !important;
 }
 
-/* 3. Target DEEPER children (The Social Links Wrapper) */
-.page__footer-follow,
-.page__footer-copyright {
-  border: none !important;
-  border-top: none !important;
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* 4. Universal Reset for Footer Internals (Failsafe) */
-/* This selects ANY div, footer, or section inside .page__footer and kills its border */
-.page__footer div, 
-.page__footer footer, 
-.page__footer section {
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Fix Text Colors in Footer */
-.page__footer-copyright, 
-.page__footer-follow .social-icons .svg-inline--fa {
+/* 3. Style the Footer Links */
+.custom-footer-inner a {
+  margin: 0 !important;
   color: var(--text-grey) !important;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.custom-footer-inner a:hover {
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+
+/* 4. Kill any other internal borders (Safety Net) */
+.page__footer footer, .page__footer div {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* Modal Background */
