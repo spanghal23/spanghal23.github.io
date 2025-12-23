@@ -212,10 +212,6 @@ video {
 </style>
 
 <div class="projects-container">
-    
-    <div class="page-header-text">
-        <p>Here are some of my most exciting projects during my time as an engineer!</p>
-    </div>
 
     <div class="projects-grid">
 
@@ -256,7 +252,7 @@ video {
                 </div>
 
                 <div class="video-container">
-                    <video controls>
+                    <video controls muted>
                         <source src="/assets/images/Robot_Arm_Demo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
