@@ -259,7 +259,7 @@ video {
                 </div>
 
                 <div class="repo-link-container">
-                    <a href="INSERT_YOUR_GITHUB_REPO_URL_HERE" class="repo-link" target="_blank">
+                    <a href="https://github.com/spanghal23/Teleoperated_Robot_Arm.git" class="repo-link" target="_blank">
                         View Project Repository on GitHub &rarr;
                     </a>
                 </div>
