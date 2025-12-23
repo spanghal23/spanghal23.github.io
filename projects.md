@@ -187,7 +187,7 @@ title: Projects
 
     <article class="project-card">
         
-        <img class="project-main-image gallery-trigger" src="/assets/images/robot-arm.jpg" alt="Teleoperated Robot Arm Main View">
+        <img class="project-main-image gallery-trigger" src="/assets/images/Final Assembly.png" alt="Robot Arm Main View">
 
         <div class="project-content">
             
@@ -199,29 +199,29 @@ title: Projects
             <div class="secondary-gallery">
                 
                 <div class="gallery-item">
-                    <img class="gallery-img gallery-trigger" src="/assets/images/gui-screenshot.jpg" alt="Python Teleoperation GUI">
-                    <span class="caption">Python Teleoperation GUI</span>
+                    <img class="gallery-img gallery-trigger" src="/assets/images/GUI SC.png" alt="Teleoperation GUI">
+                    <span class="caption">Teleoperation GUI</span>
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img gallery-trigger" src="/assets/images/cv-demo.jpg" alt="Computer Vision Pose Tracking">
-                    <span class="caption">Computer Vision Pose Tracking</span>
+                    <img class="gallery-img gallery-trigger" src="/assets/images/CV Mapping.png" alt="Computer Vision Pose Mapping">
+                    <span class="caption">Computer Vision Pose Mapping</span>
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img gallery-trigger" src="/assets/images/wiring-diagram.jpg" alt="Electrical & CANBUS Architecture">
-                    <span class="caption">Electrical & CANBUS Architecture</span>
+                    <img class="gallery-img gallery-trigger" src="/assets/images/Electrical Schematic.png" alt="Electrical Architecture">
+                    <span class="caption">Electrical Architecture</span>
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img gallery-trigger" src="/assets/images/actuator-detail.jpg" alt="Custom Planetary Actuator">
-                    <span class="caption">Custom Planetary Actuator</span>
+                    <img class="gallery-img gallery-trigger" src="/assets/images/Actuator Design.png" alt="Actuator Design">
+                    <span class="caption">Actuator Design</span>
                 </div>
 
             </div>
 
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Project Demo" allowfullscreen></iframe>
+                <iframe src="/assets/images/Robot_Arm_Demo.mp4" title="Project Demo" allowfullscreen></iframe>
             </div>
 
             <div class="repo-link-container">
