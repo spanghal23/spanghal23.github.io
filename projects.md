@@ -1,18 +1,25 @@
 ---
 layout: single
 permalink: /projects/
-title: 
+title: Projects
 ---
 
 <style>
 /* --- 0. Layout Overrides --- */
+
+/* 1. HIDE THEME HEADER: This removes the automatic "Projects" title */
+.page__title, .page-header, .page__header {
+    display: none !important;
+}
+
+/* 2. FORCE WIDE LAYOUT */
 .page__inner-wrap {
     width: 100% !important;
     max-width: 100% !important;
 }
 
 .projects-container {
-    width: 75vw; /* Wide layout */
+    width: 75vw; /* 75% of screen width */
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
@@ -26,22 +33,20 @@ title:
 .page-header-text {
     text-align: center;
     margin-bottom: 40px;
-}
-
-.page-header-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    padding-top: 10px;
 }
 
 .page-header-text p {
     font-size: 1.2rem;
     color: #666;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* --- 2. Card Styling --- */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column of wide cards */
+    grid-template-columns: 1fr;
     gap: 40px;
     padding-bottom: 40px;
 }
@@ -61,7 +66,8 @@ title:
     width: 100%;
     height: auto;
     max-height: 600px;
-    object-fit: contain;
+    /* Use contain for main image so the whole robot is visible */
+    object-fit: contain; 
     border-bottom: 1px solid #eee;
     cursor: pointer;
     background-color: #f6f8fa;
@@ -77,7 +83,7 @@ title:
     font-weight: 700;
     margin: 0 0 20px 0;
     color: #24292e;
-    text-align: center; /* CENTERED */
+    text-align: center;
 }
 
 .project-desc {
@@ -85,16 +91,16 @@ title:
     color: #586069;
     line-height: 1.6;
     margin-bottom: 30px;
-    width: 100%; /* STRETCHES ACROSS CARD */
+    width: 100%; /* Stretches text across the whole card */
     text-align: left;
 }
 
-/* --- 5. Gallery (Fixed Spacing) --- */
+/* --- 5. Gallery (No White Space) --- */
 .secondary-gallery {
     display: grid;
-    /* Changed to 4 columns to reduce white space */
+    /* 4 columns to fit all images in one row */
     grid-template-columns: repeat(4, 1fr); 
-    gap: 15px; /* Tighter gap */
+    gap: 15px; 
     margin-bottom: 30px;
 }
 
@@ -105,8 +111,9 @@ title:
 
 .gallery-img {
     width: 100%;
-    height: 180px; /* Fixed height forces uniformity */
-    object-fit: cover; /* CROPS slightly to fill the box (No white space) */
+    height: 180px; /* Fixed height for uniformity */
+    /* COVER fills the box completely (no white space), might crop edges slightly */
+    object-fit: cover; 
     border-radius: 4px;
     border: 1px solid #eee;
     margin-bottom: 8px;
@@ -207,7 +214,6 @@ video {
 <div class="projects-container">
     
     <div class="page-header-text">
-        <h1>Projects</h1>
         <p>Here are some of my most exciting projects during my time as an engineer!</p>
     </div>
 
