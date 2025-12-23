@@ -5,116 +5,135 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* 2. IMPORT INTER FONT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+/* 2. IMPORT INTER FONT (The "Minimalist" Sans-Serif) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* 3. GLOBAL VARIABLES (The "Minimalist" Palette) */
+/* 3. GLOBAL VARIABLES (Dark Mode Palette) */
 :root {
-  --bg-color: #f9fafb;      /* Light Grey Background */
-  --card-bg: #ffffff;       /* White Cards */
-  --text-main: #111827;     /* Dark Slate Text */
-  --text-muted: #6b7280;    /* Grey Text */
-  --accent-color: #2563eb;  /* Professional Blue */
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* BACKGROUNDS */
+  --bg-color: #0a0a0a;       /* Almost Black (Main Background) */
+  --card-bg: #171717;        /* Dark Grey (Cards) */
+  --header-bg: #0a0a0a;      /* Match Main Background */
+  
+  /* TEXT */
+  --text-main: #ededed;      /* White/Off-White (Headings) */
+  --text-muted: #a1a1aa;     /* Light Grey (Descriptions) */
+  
+  /* ACCENTS */
+  --accent-color: #3b82f6;   /* Bright Blue (Links/Buttons) */
+  --border-color: #262626;   /* Subtle borders */
+  
+  /* FONTS */
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* 4. GLOBAL OVERRIDES */
-/* Forces the new background and font on EVERY page */
+
+/* Force Dark Background & New Font on Body */
 body {
   background-color: var(--bg-color) !important;
-  font-family: var(--font-main) !important;
   color: var(--text-main) !important;
-  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-main) !important;
+  -webkit-font-smoothing: antialiased; /* Makes text crisp */
 }
 
-/* Standardize Headers */
+/* Headings (H1-H6) */
 h1, h2, h3, h4, h5, h6, .page__title, .site-title {
   font-family: var(--font-main) !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.02em;
   color: var(--text-main) !important;
+  letter-spacing: -0.02em; /* Tighter, modern spacing */
 }
 
-/* Clean up Links */
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Navigation Bar Tweaks (Cleaner look) */
+/* Navigation Bar (Dark) */
 .masthead {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #e5e7eb;
+  background-color: var(--header-bg) !important;
+  border-bottom: 1px solid var(--border-color);
 }
 .site-title, .masthead__menu-item a {
   color: var(--text-main) !important;
 }
+.masthead__menu-item a:hover {
+  color: var(--accent-color) !important;
+}
 
-/* === PROJECT PAGE STYLES === */
-/* Adding these here allows them to load on your Projects page automatically */
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #60a5fa; /* Lighter blue on hover */
+  text-decoration: none;
+}
+
+/* Footer (Dark) */
+.page__footer {
+  background-color: var(--bg-color) !important;
+  color: var(--text-muted) !important;
+}
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: var(--text-muted);
+}
+
+/* === PROJECT PAGE STYLES (Dark Mode Optimized) === */
 
 .projects-container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1400px; /* Wide layout */
   margin: 60px auto;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
+  gap: 80px; /* More spacing for clean look */
 }
 
 .project-card {
-  background: var(--card-bg);
-  border: none;
-  border-radius: 16px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color); /* Subtle border for definition */
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); /* Deep shadow */
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
 }
 
 .project-main-image {
   width: 100%;
   height: auto;
-  max-height: 550px;
+  max-height: 600px;
   object-fit: contain;
-  background-color: #f3f4f6;
-  border-bottom: 1px solid #f3f4f6;
+  background-color: #000; /* Black background for images */
+  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
 }
 
 .project-content {
-  padding: 40px 50px;
+  padding: 40px;
 }
 
 .project-title {
-  font-size: 2rem;
-  margin-bottom: 15px;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
   text-align: center;
+  color: var(--text-main);
 }
 
 .project-desc {
   font-size: 1.1rem;
-  color: var(--text-muted);
+  color: var(--text-muted); /* Light Grey text */
   line-height: 1.7;
   margin-bottom: 40px;
+  font-weight: 300; /* Thinner font weight for minimalist look */
 }
 
 /* Gallery Grid */
 .secondary-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 40px;
 }
 
@@ -122,19 +141,25 @@ a:hover {
   width: 100%;
   height: 160px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: zoom-in;
-  background-color: #eee;
-  transition: opacity 0.2s;
+  border: 1px solid var(--border-color);
+  background-color: #262626;
+  opacity: 0.8;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
-.gallery-img:hover { opacity: 0.85; }
+.gallery-img:hover {
+  opacity: 1;
+  transform: scale(1.02);
+  border-color: var(--accent-color);
+}
 
 .caption {
   font-size: 0.8rem;
-  color: #9ca3af;
+  color: #737373; /* Darker grey caption */
   text-align: center;
-  margin-top: 10px;
+  margin-top: 8px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -142,10 +167,10 @@ a:hover {
 /* Video */
 .video-container {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   background: #000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-color);
   margin-bottom: 30px;
 }
 video { width: 100%; display: block; }
@@ -153,17 +178,23 @@ video { width: 100%; display: block; }
 /* Repo Link */
 .repo-link-container {
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid #f3f4f6;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
 }
 .repo-link {
+  color: var(--accent-color);
   font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 12px 24px;
+  border: 1px solid var(--accent-color); /* Outlined Button style */
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
-.repo-link:hover { background-color: #eff6ff; }
+.repo-link:hover {
+  background-color: var(--accent-color);
+  color: #fff; /* White text on hover */
+}
 
-/* Modal (Popup Image) */
+/* Modal (Popup) */
 #imageModal {
   display: none;
   position: fixed;
@@ -174,16 +205,16 @@ video { width: 100%; display: block; }
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.95);
-  backdrop-filter: blur(5px);
+  background-color: rgba(0,0,0,0.95); /* Very dark overlay */
+  backdrop-filter: blur(8px);
 }
 .modal-content {
   margin: auto;
   display: block;
-  max-width: 90%;
+  max-width: 95%;
   max-height: 90vh;
-  border-radius: 8px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
 #modalCaption {
   margin: auto;
@@ -191,7 +222,7 @@ video { width: 100%; display: block; }
   width: 80%;
   max-width: 700px;
   text-align: center;
-  color: #e5e7eb;
+  color: #d4d4d4;
   padding: 20px 0;
   font-weight: 300;
 }
@@ -203,4 +234,6 @@ video { width: 100%; display: block; }
   font-size: 40px;
   font-weight: 100;
   cursor: pointer;
+  opacity: 0.7;
 }
+.close:hover { opacity: 1; }
