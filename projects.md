@@ -138,6 +138,14 @@ video {
     max-height: 600px;
 }
 
+/* IMPORTANT: This fixes the YouTube Aspect Ratio */
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+}
+
 /* --- 7. Repo Link --- */
 .repo-link-container {
     text-align: center;
@@ -260,15 +268,21 @@ video {
                     Achieved <2mm position accuracy via a PD-controlled closed-loop system validated by a ~95% accurate physics model. Implemented 10-point moving average and Kalman filtering to reject sensor noise and optimize servo-actuated throttle response.
                 </p>
 
-<div class="video-container">
-    <iframe 
-        src="https://www.youtube.com/watch?v=rYfxVyBq8CA" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
-</div>
-
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/rYfxVyBq8CA" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
+
+                <div class="repo-link-container">
+                    <a href="https://github.com/spanghal23/Hand-Controlled-Ball-Levitation.git" class="repo-link" target="_blank">
+                        View Project Repository on GitHub &rarr;
+                    </a>
+                </div>
+
+            </div>
         </article>
 
         <article class="project-card">
