@@ -5,108 +5,99 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* 2. IMPORT INTER FONT (The "Minimalist" Sans-Serif) */
+/* 2. IMPORT INTER FONT */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* 3. GLOBAL VARIABLES (Dark Mode Palette) */
+/* 3. PITCH BLACK VARIABLES */
 :root {
-  /* BACKGROUNDS */
-  --bg-color: #0a0a0a;       /* Almost Black (Main Background) */
-  --card-bg: #171717;        /* Dark Grey (Cards) */
-  --header-bg: #0a0a0a;      /* Match Main Background */
-  
-  /* TEXT */
-  --text-main: #ededed;      /* White/Off-White (Headings) */
-  --text-muted: #a1a1aa;     /* Light Grey (Descriptions) */
-  
-  /* ACCENTS */
-  --accent-color: #3b82f6;   /* Bright Blue (Links/Buttons) */
-  --border-color: #262626;   /* Subtle borders */
-  
-  /* FONTS */
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --pitch-black: #000000;    /* Pure Black */
+  --off-black: #111111;      /* Very Dark Grey (for subtle contrast) */
+  --card-bg: #1a1a1a;        /* Dark Grey Cards */
+  --text-white: #ffffff;     /* Pure White Text */
+  --text-grey: #a0a0a0;      /* Grey Text */
+  --accent: #3b82f6;         /* Bright Blue */
+  --border: #333333;         /* Dark Borders */
 }
 
-/* 4. GLOBAL OVERRIDES */
+/* 4. NUCLEAR OVERRIDES (Force Everything to Black) */
 
-/* Force Dark Background & New Font on Body */
-body {
-  background-color: var(--bg-color) !important;
-  color: var(--text-main) !important;
-  font-family: var(--font-main) !important;
-  -webkit-font-smoothing: antialiased; /* Makes text crisp */
+/* Main Page Background */
+html, body, .page, .page__content, .initial-content, .archive {
+  background-color: var(--pitch-black) !important;
+  color: var(--text-white) !important;
+  font-family: 'Inter', sans-serif !important;
 }
 
-/* Headings (H1-H6) */
-h1, h2, h3, h4, h5, h6, .page__title, .site-title {
-  font-family: var(--font-main) !important;
-  color: var(--text-main) !important;
-  letter-spacing: -0.02em; /* Tighter, modern spacing */
-}
-
-/* Navigation Bar (Dark) */
+/* Header / Navigation Bar */
 .masthead {
-  background-color: var(--header-bg) !important;
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--pitch-black) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+.greedy-nav {
+  background-color: var(--pitch-black) !important;
 }
 .site-title, .masthead__menu-item a {
-  color: var(--text-main) !important;
+  color: var(--text-white) !important;
+  font-weight: 600 !important;
 }
-.masthead__menu-item a:hover {
-  color: var(--accent-color) !important;
+
+/* Footer */
+.page__footer {
+  background-color: var(--pitch-black) !important;
+  color: var(--text-grey) !important;
+  border-top: 1px solid var(--border) !important;
+}
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: var(--text-grey) !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .page__title {
+  color: var(--text-white) !important;
+  font-family: 'Inter', sans-serif !important;
+  letter-spacing: -0.02em;
 }
 
 /* Links */
 a {
-  color: var(--accent-color);
+  color: var(--accent) !important;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 a:hover {
-  color: #60a5fa; /* Lighter blue on hover */
-  text-decoration: none;
+  text-decoration: underline;
+  color: #60a5fa !important;
 }
 
-/* Footer (Dark) */
-.page__footer {
-  background-color: var(--bg-color) !important;
-  color: var(--text-muted) !important;
-}
-.page__footer-follow .social-icons .svg-inline--fa {
-  color: var(--text-muted);
-}
-
-/* === PROJECT PAGE STYLES (Dark Mode Optimized) === */
-
+/* === PROJECT CARDS (Minimalist Dark) === */
 .projects-container {
   width: 90%;
-  max-width: 1400px; /* Wide layout */
+  max-width: 1400px;
   margin: 60px auto;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 80px; /* More spacing for clean look */
+  gap: 80px;
 }
 
 .project-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color); /* Subtle border for definition */
-  border-radius: 12px;
+  background-color: var(--card-bg) !important; /* Dark Grey Card */
+  border: 1px solid var(--border);
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); /* Deep shadow */
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8); /* Deep Shadow */
   display: flex;
   flex-direction: column;
 }
 
 .project-main-image {
+  background-color: #000;
+  border-bottom: 1px solid var(--border);
   width: 100%;
   height: auto;
   max-height: 600px;
   object-fit: contain;
-  background-color: #000; /* Black background for images */
-  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
 }
 
@@ -115,21 +106,21 @@ a:hover {
 }
 
 .project-title {
+  color: var(--text-white) !important;
   font-size: 2.2rem;
-  margin-bottom: 20px;
   text-align: center;
-  color: var(--text-main);
+  margin-bottom: 20px;
 }
 
 .project-desc {
+  color: var(--text-grey) !important;
   font-size: 1.1rem;
-  color: var(--text-muted); /* Light Grey text */
   line-height: 1.7;
+  font-weight: 300;
   margin-bottom: 40px;
-  font-weight: 300; /* Thinner font weight for minimalist look */
 }
 
-/* Gallery Grid */
+/* Gallery & Video */
 .secondary-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -141,36 +132,25 @@ a:hover {
   width: 100%;
   height: 160px;
   object-fit: cover;
-  border-radius: 6px;
-  cursor: zoom-in;
-  border: 1px solid var(--border-color);
-  background-color: #262626;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background-color: #222;
   opacity: 0.8;
-  transition: opacity 0.2s, transform 0.2s;
+  transition: all 0.2s;
+  cursor: zoom-in;
 }
 
 .gallery-img:hover {
   opacity: 1;
-  transform: scale(1.02);
-  border-color: var(--accent-color);
+  border-color: var(--accent);
 }
 
-.caption {
-  font-size: 0.8rem;
-  color: #737373; /* Darker grey caption */
-  text-align: center;
-  margin-top: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Video */
 .video-container {
   width: 100%;
+  background: #000;
+  border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
-  background: #000;
-  border: 1px solid var(--border-color);
   margin-bottom: 30px;
 }
 video { width: 100%; display: block; }
@@ -179,23 +159,25 @@ video { width: 100%; display: block; }
 .repo-link-container {
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border);
 }
 .repo-link {
-  color: var(--accent-color);
-  font-weight: 600;
-  padding: 12px 24px;
-  border: 1px solid var(--accent-color); /* Outlined Button style */
+  color: var(--accent) !important;
+  border: 1px solid var(--accent);
+  padding: 10px 24px;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.2s;
 }
 .repo-link:hover {
-  background-color: var(--accent-color);
-  color: #fff; /* White text on hover */
+  background-color: var(--accent);
+  color: #fff !important;
+  text-decoration: none;
 }
 
-/* Modal (Popup) */
+/* Modal */
 #imageModal {
+  background-color: rgba(0,0,0,0.95) !important;
+  backdrop-filter: blur(5px);
   display: none;
   position: fixed;
   z-index: 9999;
@@ -205,8 +187,6 @@ video { width: 100%; display: block; }
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.95); /* Very dark overlay */
-  backdrop-filter: blur(8px);
 }
 .modal-content {
   margin: auto;
@@ -214,7 +194,6 @@ video { width: 100%; display: block; }
   max-width: 95%;
   max-height: 90vh;
   border-radius: 4px;
-  box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
 #modalCaption {
   margin: auto;
@@ -222,9 +201,8 @@ video { width: 100%; display: block; }
   width: 80%;
   max-width: 700px;
   text-align: center;
-  color: #d4d4d4;
+  color: #ccc;
   padding: 20px 0;
-  font-weight: 300;
 }
 .close {
   position: absolute;
@@ -232,8 +210,5 @@ video { width: 100%; display: block; }
   right: 40px;
   color: #fff;
   font-size: 40px;
-  font-weight: 100;
   cursor: pointer;
-  opacity: 0.7;
 }
-.close:hover { opacity: 1; }
