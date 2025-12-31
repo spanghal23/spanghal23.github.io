@@ -312,9 +312,9 @@ video {
                     <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 10px;">
                         <h3 style="text-align: center; font-size: 1rem; color: #555; margin-bottom: 10px;">Gallery</h3>
                         
-                        <img class="gallery-img gallery-trigger" style="height: auto; width: 100%; margin-bottom: 0;" src="/assets/images/Gripper Iterations.jpg" alt="Gripper Iterations">
-                        <img class="gallery-img gallery-trigger" style="height: auto; width: 100%; margin-bottom: 0;" src="/assets/images/PLA Prototype.jpg" alt="PLA Prototype">
-                        <img class="gallery-img gallery-trigger" style="height: auto; width: 100%; margin-bottom: 0;" src="/assets/images/High Level Code.jpg" alt="High Level Code">
+                        <img class="gallery-img gallery-trigger" style="height: auto; width: auto; margin-bottom: 0;" src="/assets/images/Gripper Iterations.jpg" alt="Gripper Iterations">
+                        <img class="gallery-img gallery-trigger" style="height: auto; width: auto; margin-bottom: 0;" src="/assets/images/PLA Prototype.jpg" alt="PLA Prototype">
+                        <img class="gallery-img gallery-trigger" style="height: auto; width: auto; margin-bottom: 0;" src="/assets/images/High Level Code.jpg" alt="High Level Code">
                     </div>
 
                 </div>
