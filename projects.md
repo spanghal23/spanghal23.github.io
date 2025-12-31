@@ -321,7 +321,7 @@ video {
 
                 <div class="repo-link-container">
                     <a href="https://github.com/spanghal23/Vitesco Project.git" class="repo-link" target="_blank">
-                        See more information here;
+                        See more information here
                     </a>
                 </div>
 
