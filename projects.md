@@ -288,7 +288,7 @@ video {
         <div class="project-card">
     
     <div class="card-image">
-        <img src="images/project3-main.jpg" alt="Main Project Image">
+        <img src="/assets/images/EOAT Assembly.jpg" alt="Final EOAT Assembly">
     </div>
 
     <div class="card-content">
@@ -301,16 +301,16 @@ video {
         <div class="gallery-container">
             <h4 class="section-label">Gallery</h4>
             <div class="gallery-grid">
-                <img src="images/gallery1.jpg" alt="Detail 1" class="gallery-thumb">
-                <img src="images/gallery2.jpg" alt="Detail 2" class="gallery-thumb">
-                <img src="images/gallery3.jpg" alt="Detail 3" class="gallery-thumb">
+                <img src="/assets/images/Gripper Iterations.jpg" alt="Gripper Iterations" class="gallery-thumb">
+                <img src="/assets/images/PLA Prototype.jpg" alt="PLA Prototype" class="gallery-thumb">
+                <img src="/assets/images/High Level Code.jpg" alt="High Level Code" class="gallery-thumb">
             </div>
         </div>
 
         <div class="video-container">
             <h4 class="section-label">EOAT + TM12 Cobot Pick and Place Demo</h4>
             <video controls width="100%">
-                <source src="videos/project-demo.mp4" type="video/mp4">
+                <source src="/assets/images/EOAT Demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
