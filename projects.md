@@ -285,38 +285,42 @@ video {
             </div>
         </article>
 
-        <div class="project-card">
-    
-    <div class="card-image">
-        <img src="/assets/images/EOAT Assembly.jpg" alt="Final EOAT Assembly">
-    </div>
+       <article class="project-card">
+            
+            <img class="project-main-image gallery-trigger" src="/assets/images/EOAT Assembly.jpg" alt="Final EOAT Assembly">
 
-    <div class="card-content">
-        <h3 class="project-title">Custom EOAT For Cobot Operations</h3>
+            <div class="project-content">
+                
+                <h2 class="project-title">Custom EOAT For Cobot Operations</h2>
 
-        <p class="project-description">
-            Engineered a custom MIC6-aluminum EOAT for UR10e/TM12S cobots to handle 2.5kg+ payloads. Utilizing FEA to reduce beam deflection by 3°, this precision design enabled a vision-guided automation cell that drove $720,000 in annual savings.
-        </p>
+                <p class="project-desc">
+                    Engineered a custom MIC6-aluminum EOAT for UR10e/TM12S cobots to handle 2.5kg+ payloads. Utilizing FEA to reduce beam deflection by 3°, this precision design enabled a vision-guided automation cell that drove $720,000 in annual savings.
+                </p>
 
-        <div class="gallery-container">
-            <h4 class="section-label">Gallery</h4>
-            <div class="gallery-grid">
-                <img src="/assets/images/Gripper Iterations.jpg" alt="Gripper Iterations" class="gallery-thumb">
-                <img src="/assets/images/PLA Prototype.jpg" alt="PLA Prototype" class="gallery-thumb">
-                <img src="/assets/images/High Level Code.jpg" alt="High Level Code" class="gallery-thumb">
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+                    
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="text-align: center; font-size: 1rem; color: #555; margin-bottom: 10px;">Demo Video</h3>
+                        <div class="video-container" style="background: black; margin-bottom: 0;">
+                            <video controls muted style="width: 100%; height: auto; display: block;">
+                                <source src="/assets/images/EOAT Demo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+                    <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 10px;">
+                        <h3 style="text-align: center; font-size: 1rem; color: #555; margin-bottom: 10px;">Gallery</h3>
+                        
+                        <img class="gallery-img gallery-trigger" style="height: auto; width: 100%; margin-bottom: 0;" src="/assets/images/Gripper Iterations.jpg" alt="Gripper Iterations">
+                        <img class="gallery-img gallery-trigger" style="height: auto; width: 100%; margin-bottom: 0;" src="/assets/images/PLA Prototype.jpg" alt="PLA Prototype">
+                        <img class="gallery-img gallery-trigger" style="height: auto; width: 100%; margin-bottom: 0;" src="/assets/images/High Level Code.jpg" alt="High Level Code">
+                    </div>
+
+                </div>
+
             </div>
-        </div>
-
-        <div class="video-container">
-            <h4 class="section-label">EOAT + TM12 Cobot Pick and Place Demo</h4>
-            <video controls width="100%">
-                <source src="/assets/images/EOAT Demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        </div>
-</div>
+        </article>
 
 <div id="imageModal">
   <span class="close">&times;</span>
