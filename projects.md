@@ -320,9 +320,9 @@ video {
                 </div>
 
                 <div class="repo-link-container">
-                    <a href="https://github.com/spanghal23/Vitesco Project.git" class="repo-link" target="_blank">
-                        See more information here
-                    </a>
+                <a href="https://drive.google.com/file/d/1YUXEei7PiLzl43gIPgjjNze5_8aBvPF2/view?usp=sharing" class="repo-link" target="_blank" style="display: block; margin-bottom: 10px; color: #d73a49;">
+                View Technical Presentation (PDF) &rarr;
+                </a>
                 </div>
 
             </div>
