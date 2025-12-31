@@ -317,6 +317,12 @@ video {
                         <img class="gallery-img gallery-trigger" style="height: auto; max-width: 100%; width: auto; margin-bottom: 0;" src="/assets/images/Code Flow.svg" alt="Code Flow">
                     </div>
 
+                    <div class="repo-link-container">
+                    <a href="https://github.com/spanghal23/Vitesco Project.git" class="repo-link" target="_blank">
+                        See more information here;
+                    </a>
+                </div>
+
                 </div>
 
             </div>
