@@ -287,7 +287,7 @@ video {
 
        <article class="project-card">
             
-            <img class="project-main-image gallery-trigger" src="/assets/images/EOAT Assembly.jpg" alt="Final EOAT Assembly">
+            <img class="project-main-image gallery-trigger" src="/assets/images/EOAT Assembly.svg" alt="Final EOAT Assembly">
 
             <div class="project-content">
                 
@@ -312,9 +312,9 @@ video {
 <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 10px; align-items: center;">
                         <h3 style="text-align: center; font-size: 1rem; color: #555; margin-bottom: 10px;">Gallery</h3>
                         
-                        <img class="gallery-img gallery-trigger" style="height: auto; max-width: 100%; width: auto; margin-bottom: 0;" src="/assets/images/Gripper Iterations.jpg" alt="Gripper Iterations">
-                        <img class="gallery-img gallery-trigger" style="height: auto; max-width: 100%; width: auto; margin-bottom: 0;" src="/assets/images/PLA Prototype.jpg" alt="PLA Prototype">
-                        <img class="gallery-img gallery-trigger" style="height: auto; max-width: 100%; width: auto; margin-bottom: 0;" src="/assets/images/High Level Code.jpg" alt="High Level Code">
+                        <img class="gallery-img gallery-trigger" style="height: auto; max-width: 100%; width: auto; margin-bottom: 0;" src="/assets/images/Gripper Iterations.svg" alt="Gripper Iterations">
+                        <img class="gallery-img gallery-trigger" style="height: auto; max-width: 100%; width: auto; margin-bottom: 0;" src="/assets/images/PLA Prototype.svg" alt="PLA Prototype">
+                        <img class="gallery-img gallery-trigger" style="height: auto; max-width: 100%; width: auto; margin-bottom: 0;" src="/assets/images/Code Flow.svg" alt="Code Flow">
                     </div>
 
                 </div>
