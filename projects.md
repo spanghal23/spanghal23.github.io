@@ -292,10 +292,10 @@ video {
     </div>
 
     <div class="card-content">
-        <h3 class="project-title">Project Title Here</h3>
+        <h3 class="project-title">Custom EOAT For Cobot Operations</h3>
 
         <p class="project-description">
-            A brief description of what is happening in the video and gallery below.
+            Engineered a custom MIC6-aluminum EOAT for UR10e/TM12S cobots to handle 2.5kg+ payloads. Utilizing FEA to reduce beam deflection by 3°, this precision design enabled a vision-guided automation cell that drove $720,000 in annual savings.
         </p>
 
         <div class="gallery-container">
@@ -308,7 +308,7 @@ video {
         </div>
 
         <div class="video-container">
-            <h4 class="section-label">Demo Video</h4>
+            <h4 class="section-label">EOAT + TM12 Cobot Pick and Place Demo</h4>
             <video controls width="100%">
                 <source src="videos/project-demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
